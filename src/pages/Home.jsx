@@ -1,4 +1,5 @@
 import { Header } from "@/widgets/Header";
+import { motion } from "motion/react";
 
 export const Home = () => {
   return (
@@ -16,9 +17,14 @@ export const Home = () => {
             практике изучения и тестирования иероглифов хираганы и катаканы
           </p>
 
-          <button className="px-4 py-2 mt-2 text-base font-bold text-white transition bg-red-700 cursor-pointer select-none md:px-6 duration-400 md:text-xl font-body hover:bg-red-800 active:bg-red-900 rounded-4xl">
+          <motion.button
+            whileTap={{ scale: 0.92 }}
+            drag
+            dragConstraints={{ left: 0, right: 100, bottom: 0, top: 0 }}
+            className="px-4 py-2 mt-2 text-base font-bold text-white bg-red-700 cursor-pointer select-none md:px-6 md:text-xl font-body hover:bg-red-800 active:bg-red-900 rounded-4xl"
+          >
             Приступить
-          </button>
+          </motion.button>
         </div>
       </div>
     </>
