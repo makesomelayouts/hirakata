@@ -5,7 +5,7 @@ export const Header = () => {
     <header className="p-6">
       <div className="flex items-center justify-center gap-5">
         <Link
-          className="font-bold text-white font-body font-stalinist hover:text-gray-200"
+          className="font-bold text-white font-body hover:text-gray-200 hover:border-b"
           to="/"
         >
           Главная
