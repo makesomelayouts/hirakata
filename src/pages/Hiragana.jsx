@@ -1,4 +1,3 @@
-import { Footer } from "@/widgets/Footer";
 import { Header } from "@/widgets/Header";
 import { motion, useSpring, useScroll } from "framer-motion";
 
@@ -11,12 +10,7 @@ function Hiragana() {
   });
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <motion.div className="h-screen bg-[url(@/assets/hiragana-bg.jpg)] bg-cover bg-center">
       <Header />
 
       <motion.div
@@ -33,7 +27,7 @@ function Hiragana() {
         }}
       />
 
-      <h1 className="px-6 mt-2 pb-[10000px] font-body text-2xl font-bold text-center">
+      <h1 className="px-6 mt-2 text-2xl font-bold text-center font-body">
         Хирагана
       </h1>
     </motion.div>
