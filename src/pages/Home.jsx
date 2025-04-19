@@ -16,7 +16,7 @@ export const Home = () => {
             практике изучения и тестирования иероглифов хираганы и катаканы
           </p>
 
-          <button className="px-4 py-2 mt-2 text-base font-bold text-white bg-red-700 cursor-pointer md:text-xl font-body hover:bg-red-800 active:bg-red-900 rounded-4xl">
+          <button className="px-4 py-2 mt-2 text-base font-bold text-white transition bg-red-700 cursor-pointer select-none duration-400 md:text-xl font-body hover:bg-red-800 active:bg-red-900 rounded-4xl">
             Приступить
           </button>
         </div>
