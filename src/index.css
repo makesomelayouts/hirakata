@@ -10,3 +10,35 @@
 *::selection {
   background: #C192C6;
 }
+
+/* CUSTOM SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #EBAAC1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #8C5D91;
+  
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7C5185;
+}
+
+/* Custom cursor */
+.app {
+  cursor: url(assets/neo-nyan-cursor.png), auto;
+}
+
+.app button {
+  cursor: url(assets/neo-nyan-pointer.png), auto;
+}
