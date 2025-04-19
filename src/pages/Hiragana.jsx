@@ -1,9 +1,8 @@
 import { Footer } from "@/widgets/Footer";
 import { Header } from "@/widgets/Header";
+import { motion, useSpring, useScroll } from "framer-motion";
 
-import { motion, useSpring, useScroll } from "motion/react";
-
-export const Hiragana = () => {
+function Hiragana() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -12,7 +11,12 @@ export const Hiragana = () => {
   });
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <Header />
 
       <motion.div
@@ -29,9 +33,11 @@ export const Hiragana = () => {
         }}
       />
 
-      <h1 className="px-6 mt-2 pb-[10000px] text-2xl font-bold text-center">
+      <h1 className="px-6 mt-2 pb-[10000px] font-body text-2xl font-bold text-center">
         Хирагана
       </h1>
-    </>
+    </motion.div>
   );
-};
+}
+
+export default Hiragana;

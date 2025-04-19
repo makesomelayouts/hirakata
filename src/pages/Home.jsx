@@ -1,32 +1,56 @@
 import { Header } from "@/widgets/Header";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
-export const Home = () => {
+function Home() {
   return (
     <>
-      <div className="h-screen bg-[url(@/assets/bg.jpg)] bg-cover">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className="h-screen bg-[url(@/assets/bg.jpg)] bg-cover"
+      >
         <Header />
 
         <div className="flex flex-col items-baseline justify-center ml-10 text-left text-white mt-52 md:ml-32 xl:ml-80 xl:mt-64">
-          <h1 className="text-3xl font-normal md:text-5xl font-header">
+          <motion.h1
+            className="text-3xl font-normal md:text-5xl font-header"
+            initial={{ opacity: 0, y: -20 }} // Начальное состояние
+            animate={{ opacity: 1, y: 0 }} // Конечное состояние
+            transition={{ duration: 1 }} // Длительность анимации
+            drag
+            dragConstraints={{ left: 0, right: 500, bottom: 300, top: 0 }}
+          >
             ХираКата
-          </h1>
+          </motion.h1>
 
-          <p className="max-w-2xl my-[22px] text-base md:text-xl font-bold text-white font-body">
+          <motion.p
+            className="max-w-2xl my-[22px] text-base md:text-xl font-bold text-white font-body"
+            initial={{ opacity: 0, y: -20 }} // Начальное состояние
+            animate={{ opacity: 1, y: 0 }} // Конечное состояние
+            transition={{ duration: 1, delay: 0.5 }} // Длительность и задержка
+            drag
+            dragConstraints={{ left: 0, right: 500, bottom: 300, top: 0 }}
+          >
             Хотите освоить японский язык? Мы поможем вам разобраться в теории,
             практике изучения и тестирования иероглифов хираганы и катаканы
-          </p>
+          </motion.p>
 
           <motion.button
-            whileTap={{ scale: 0.92 }}
             drag
-            dragConstraints={{ left: 0, right: 200, bottom: 100, top: 0 }}
+            dragConstraints={{ left: 0, right: 500, bottom: 300, top: 0 }}
             className="px-4 py-2 mt-2 text-base font-bold text-white bg-red-700 cursor-pointer select-none md:px-6 md:text-xl font-body hover:bg-red-800 active:bg-red-900 rounded-4xl"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1 }}
           >
             Приступить
           </motion.button>
         </div>
-      </div>
+      </motion.div>
     </>
   );
-};
+}
+
+export default Home;
