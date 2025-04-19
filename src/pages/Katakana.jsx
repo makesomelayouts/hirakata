@@ -11,12 +11,7 @@ function Katakana() {
   });
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <motion.div className="h-screen bg-[url(@/assets/katakana-bg.jpg)] bg-cover">
       <Header />
 
       <motion.div
@@ -33,7 +28,7 @@ function Katakana() {
         }}
       />
 
-      <h1 className="font-body px-6 mt-2 pb-[10000px] text-2xl font-bold text-center">
+      <h1 className="px-6 mt-2 text-2xl font-bold text-center font-body">
         Катакана
       </h1>
     </motion.div>

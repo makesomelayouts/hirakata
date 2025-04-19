@@ -1,4 +1,6 @@
-import { Link, useLocation } from "react-router-dom";
+// components/Header.jsx
+import { useLocation } from "react-router-dom";
+import { TransitionLink } from "@/shared/TransitionLink";
 
 export const Header = () => {
   let location = useLocation();
@@ -6,7 +8,7 @@ export const Header = () => {
   return (
     <header className="sticky top-0 left-0 right-0 p-6 ">
       <div className="flex items-center justify-center gap-5">
-        <Link
+        <TransitionLink
           className={`${
             location.pathname === "/"
               ? "bg-[#5B3569] px-6 py-2 rounded-full"
@@ -15,9 +17,9 @@ export const Header = () => {
           to="/"
         >
           Главная
-        </Link>
+        </TransitionLink>
 
-        <Link
+        <TransitionLink
           className={`${
             location.pathname === "/hiragana"
               ? "bg-[#5B3569] px-6 py-2 rounded-full"
@@ -26,9 +28,9 @@ export const Header = () => {
           to="/hiragana"
         >
           Хирагана
-        </Link>
+        </TransitionLink>
 
-        <Link
+        <TransitionLink
           className={`${
             location.pathname === "/katakana"
               ? "bg-[#5B3569] px-6 py-2 rounded-full"
@@ -37,7 +39,7 @@ export const Header = () => {
           to="/katakana"
         >
           Катакана
-        </Link>
+        </TransitionLink>
       </div>
     </header>
   );
