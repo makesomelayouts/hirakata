@@ -1,22 +1,26 @@
-import { Layout } from "@/widgets/Layout";
+import { Header } from "@/widgets/Header";
 
 export const Home = () => {
   return (
     <>
-      <Layout>
-        <div className="text-center px-6 mt-2">
-          <h1 className="text-2xl font-bold">Добро пожаловать на ХираКата!</h1>
+      <div className="h-screen bg-[url(@/assets/bg.jpg)] bg-cover">
+        <Header />
 
-          <p className="text-xl my-2 mx-auto max-w-2xl">
-            Хотите освоить японский язык? Мы поможем вам разобраться в теории и
-            практике написания символов хирагана и катакана
+        <div className="flex flex-col items-baseline justify-center ml-10 text-left text-white mt-52 md:ml-32 xl:ml-80 xl:mt-64">
+          <h1 className="text-3xl font-normal md:text-5xl font-header">
+            ХираКата
+          </h1>
+
+          <p className="max-w-2xl my-[22px] text-base md:text-xl font-bold text-white font-body">
+            Хотите освоить японский язык? Мы поможем вам разобраться в теории,
+            практике изучения и тестирования иероглифов хираганы и катаканы
           </p>
 
-          <button className="mt-2 text-white px-4 sm:px-8 py-2 sm:py-3 bg-red-700 hover:bg-red-800 rounded-4xl cursor-pointer">
+          <button className="px-4 py-2 mt-2 text-base font-bold text-white bg-red-700 cursor-pointer md:text-xl font-body hover:bg-red-800 active:bg-red-900 rounded-4xl">
             Приступить
           </button>
         </div>
-      </Layout>
+      </div>
     </>
   );
 };
