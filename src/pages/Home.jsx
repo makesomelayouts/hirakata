@@ -20,7 +20,7 @@ export const Home = () => {
           <motion.button
             whileTap={{ scale: 0.92 }}
             drag
-            dragConstraints={{ left: 0, right: 100, bottom: 0, top: 0 }}
+            dragConstraints={{ left: 0, right: 200, bottom: 100, top: 0 }}
             className="px-4 py-2 mt-2 text-base font-bold text-white bg-red-700 cursor-pointer select-none md:px-6 md:text-xl font-body hover:bg-red-800 active:bg-red-900 rounded-4xl"
           >
             Приступить
