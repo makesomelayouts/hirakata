@@ -42,5 +42,5 @@
 }
 
 .app button, .app a {
-  cursor: url(assets/neo-nyan-pointer.png), auto;
+  cursor: url(assets/neo-nyan-pointer.png), pointer;
 }
