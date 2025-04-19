@@ -6,3 +6,7 @@
   --font-header: "Stalinist One";
   --font-body: "Montserrat";
 }
+
+*::selection {
+  background: #C192C6;
+}
