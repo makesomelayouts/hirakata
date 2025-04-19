@@ -32,6 +32,8 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #7C5185;
+  
+  cursor: url(assets/neo-nyan-pointer.png), auto;
 }
 
 /* Custom cursor */
