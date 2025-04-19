@@ -25,7 +25,7 @@ export const Hiragana = () => {
           right: 0,
           height: 10,
           originX: 0,
-          backgroundColor: "#ff0088",
+          backgroundColor: "#C192C6",
         }}
       />
 
