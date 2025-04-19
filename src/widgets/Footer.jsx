@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className="mt-4 px-6 pt-6 flex flex-col md:flex-row justify-between items-center text-center border-t border-gray-200">
+    <footer className="mt-4 p-6 flex flex-col md:flex-row justify-between items-center text-center border-t border-gray-200">
       <div>
         <p className="inline">{`© ${new Date().getFullYear()}`}</p>{" "}
         <strong>HiraKata</strong> от &#123; idea+code:{" "}
