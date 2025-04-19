@@ -25,15 +25,13 @@ export const Hiragana = () => {
           right: 0,
           height: 10,
           originX: 0,
-          backgroundColor: "#C192C6",
+          backgroundColor: "#EBAAC1",
         }}
       />
 
-      <h1 className="px-6 mt-2 mb-[10000px] text-2xl font-bold text-center">
+      <h1 className="px-6 mt-2 pb-[10000px] text-2xl font-bold text-center">
         Хирагана
       </h1>
-
-      <Footer />
     </>
   );
 };
