@@ -4,7 +4,7 @@ export const Header = () => {
   let location = useLocation();
 
   return (
-    <header className="p-6">
+    <header className="sticky top-0 left-0 right-0 p-6 ">
       <div className="flex items-center justify-center gap-5">
         <Link
           className={`${
