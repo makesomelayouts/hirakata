@@ -20,19 +20,19 @@
 /* Track */
 ::-webkit-scrollbar-track {
   background: #EBAAC1;
+  box-shadow: inset 0 0 5px #8C5D91;
+
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #8C5D91;
-  
   border-radius: 50px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #7C5185;
-  
   cursor: url(assets/neo-nyan-pointer.png), auto;
 }
 
