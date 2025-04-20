@@ -14,7 +14,15 @@ function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 2 }}
             drag
-            dragConstraints={{ left: 0, right: 500, bottom: 300, top: 0 }}
+            dragConstraints={{
+              top: -125,
+              right: 125,
+              bottom: 125,
+              left: -125,
+            }}
+            dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+            dragElastic={0.5}
+            whileTap={{ cursor: "grabbing" }}
           >
             ХираКата
           </motion.h1>
@@ -25,7 +33,15 @@ function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1 }}
             drag
-            dragConstraints={{ left: 0, right: 500, bottom: 300, top: 0 }}
+            dragConstraints={{
+              top: -125,
+              right: 125,
+              bottom: 125,
+              left: -125,
+            }}
+            dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+            dragElastic={0.5}
+            whileTap={{ cursor: "grabbing" }}
           >
             Хотите освоить японский язык? Мы поможем вам разобраться в теории,
             практике изучения и тестирования иероглифов хираганы и катаканы
@@ -33,7 +49,15 @@ function Home() {
 
           <motion.button
             drag
-            dragConstraints={{ left: 0, right: 500, bottom: 300, top: 0 }}
+            dragConstraints={{
+              top: -125,
+              right: 125,
+              bottom: 125,
+              left: -125,
+            }}
+            dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+            dragElastic={0.5}
+            whileTap={{ cursor: "grabbing" }}
             className="px-4 py-2 mt-2 text-base font-bold text-white bg-red-700 cursor-pointer md:px-6 md:text-xl font-body hover:bg-red-800 active:bg-red-900 rounded-4xl"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
