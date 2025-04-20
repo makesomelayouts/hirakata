@@ -6,7 +6,6 @@ import TransitionOverlay from "@/shared/TransitionOverlay";
 import Home from "@/pages/Home";
 import Hiragana from "@/pages/Hiragana";
 import Katakana from "@/pages/Katakana";
-import { Header } from "@/widgets/Header"; // Import your Header component
 
 // Create a context to manage transitions
 import { createContext, useContext } from "react";
@@ -26,17 +25,18 @@ export default function App() {
   const getPageTitle = (pathname) => {
     switch (pathname) {
       case "/hiragana":
-        return "ひらがな";
+        return { title: "ひらがな", subtitle: "Хирагана" };
       case "/katakana":
-        return "カタカナ";
+        return { title: "カタカナ", subtitle: "Катакана" };
       default:
-        return "ようこそ";
+        return { title: "ようこそ", subtitle: "Главная" };
     }
   };
 
   // Function to start a transition
   const startTransition = (pathname) => {
-    setTransitionTitle(getPageTitle(pathname));
+    const { title, subtitle } = getPageTitle(pathname);
+    setTransitionTitle({ title, subtitle });
     setShowOverlay(true);
     setNextPathname(pathname);
   };
@@ -64,9 +64,14 @@ export default function App() {
       {/* Transition Overlay */}
       <AnimatePresence mode="wait">
         {showOverlay && (
-          <TransitionOverlay key="overlay" title={transitionTitle} />
+          <TransitionOverlay
+            key="overlay"
+            title={transitionTitle.title}
+            subtitle={transitionTitle.subtitle}
+          />
         )}
       </AnimatePresence>
+
       {/* Page Content */}
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
