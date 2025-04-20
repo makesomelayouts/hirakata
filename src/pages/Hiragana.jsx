@@ -147,12 +147,12 @@ function Hiragana() {
                 whileHover={{ scale: 1.05 }}
               >
                 <p
-                  className="font-jp text-8xl cursor-pointer hover:text-[#E7D2D2] active:text-[#5B3569]"
+                  className="font-jp text-6xl cursor-pointer hover:text-[#E7D2D2] active:text-[#5B3569]"
                   onClick={() => AudioManager.play(char)}
                 >
                   {jpChar}
                 </p>
-                <p className="font-body text-5xl mt-4">{char}</p>
+                <p className="font-body text-3xl mt-4">{char}</p>
               </motion.div>
             );
           })}
