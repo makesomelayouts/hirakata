@@ -3,7 +3,8 @@ import { motion, useSpring, useScroll } from "framer-motion";
 import fujiyama from "@/assets/Гора Фудзи.png";
 import toriiGate from "@/assets/torii-gate.png";
 import japaneseFlag from "@/assets/japan.png";
-import hiraganaA from "@/assets/audio/hiragana/a-1.mp3";
+import { AudioManager } from "@/utils/audioManager";
+import { getJapaneseChar } from "@/utils/japaneseChars";
 
 function Hiragana() {
   const { scrollYProgress } = useScroll();
@@ -12,6 +13,54 @@ function Hiragana() {
     damping: 40,
     restDelta: 0.001,
   });
+  const chars = [
+    "a",
+    "i",
+    "u",
+    "e",
+    "o",
+    "ka",
+    "ki",
+    "ku",
+    "ke",
+    "ko",
+    "sa",
+    "shi",
+    "su",
+    "se",
+    "so",
+    "ta",
+    "chi",
+    "tsu",
+    "te",
+    "to",
+    "na",
+    "ni",
+    "nu",
+    "ne",
+    "no",
+    "ha",
+    "hi",
+    "fu",
+    "he",
+    "ho",
+    "ma",
+    "mi",
+    "mu",
+    "me",
+    "mo",
+    "ya",
+    "yu",
+    "yo",
+    "ra",
+    "ri",
+    "ru",
+    "re",
+    "ro",
+    "wa",
+    "wo",
+    "n",
+  ];
 
   return (
     <motion.div
@@ -33,12 +82,12 @@ function Hiragana() {
           <img
             src={fujiyama}
             alt="Гора Фудзи"
-            className="mt-[30px] select-none"
+            className="mt-[30px] select-none order-2"
           />
         </div>
 
         <div className="flex flex-col max-w-lg items-center justify-center bg-[#8C5D91] px-6 py-5 rounded-[45px] mt-6">
-          <p className="text-center font-body text-2xl font-bold text-right">
+          <p className="font-body text-2xl font-bold text-right">
             — японская слоговая азбука, одна из составляющих японской
             письменности наряду с катаканой, иероглифами, арабскими цифрами и
             ромадзи (латинским алфавитом)
@@ -46,13 +95,9 @@ function Hiragana() {
 
           <div
             className="relative mt-3 w-[467px] h-[260px] bg-[#7C5185] hover:bg-[#5B3569] transition duration-400 ease-in-out w-full rounded-4xl cursor-pointer"
-            onClick={() => {
-              const audio = new Audio(hiraganaA);
-              audio.volume = 0.3; // Установите громкость на 50%
-              audio.play();
-            }}
+            onClick={() => AudioManager.play(chars[0])}
           >
-            <h1 className="absolute top-[-30%] left-[22%] text-[260px] font-jp select-none">
+            <h1 className="pointer-events-none absolute top-[-30%] left-[22%] text-[260px] font-jp select-none">
               あ
             </h1>
           </div>
@@ -86,10 +131,31 @@ function Hiragana() {
         </p>
       </section>
 
-      <section className="flex flex-col items-center justify-center max-w-[1072px] mx-auto">
+      <section className="flex flex-col items-center justify-center max-w-[1072px] mx-auto lg:mt-[253px]">
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-center font-header text-5xl">Алфавит</h1>
           <div className="mt-3.5 bg-[#8C5D91] h-2.5 w-full rounded-full"></div>
+        </div>
+
+        <div className="grid grid-cols-5 gap-8 mt-8 w-full">
+          {chars.map((char, index) => {
+            const jpChar = getJapaneseChar(char); // Функция для получения японского символа
+            return (
+              <motion.div
+                key={index}
+                className="flex flex-col items-center justify-center p-4 bg-[#8C5D91]/30 rounded-xl hover:bg-[#8C5D91]/50 transition-colors"
+                whileHover={{ scale: 1.05 }}
+              >
+                <p
+                  className="font-jp text-8xl cursor-pointer hover:text-[#E7D2D2] active:text-[#5B3569]"
+                  onClick={() => AudioManager.play(char)}
+                >
+                  {jpChar}
+                </p>
+                <p className="font-body text-5xl mt-4">{char}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </section>
     </motion.div>
