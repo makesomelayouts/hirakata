@@ -2,6 +2,7 @@ import { Header } from "@/widgets/Header";
 import { motion, useSpring, useScroll } from "framer-motion";
 import fujiyama from "@/assets/Гора Фудзи.png";
 import toriiGate from "@/assets/torii-gate.png";
+import japaneseFlag from "@/assets/japan.png";
 import hiraganaA from "@/assets/audio/hiragana/a-1.mp3";
 
 function Hiragana() {
@@ -75,8 +76,22 @@ function Hiragana() {
         <img
           src={toriiGate}
           alt="Ворота Тории"
-          className="lg:mr-44 lg:mt-0 mt-20"
+          className="lg:mr-32 lg:mt-0 mt-20"
         />
+      </section>
+
+      <section className="flex flex-col items-center justify-between lg:flex-row max-w-[1200px] mx-auto mt-32">
+        <div className="flex flex-col items-center justify-center px-8 ml-32">
+          <img src={japaneseFlag} alt="Флаг Японии" className="select-none" />
+          <p className="font-jp text-[64px]">にほんご</p>
+        </div>
+
+        <p className="font-body font-bold text-right pt-[43px] pr-[28px] pl-[14px] pb-[37px] bg-[#8C5D91] mr-10 rounded-[45px] max-w-[543px] text-2xl">
+          Используется для обозначения родных для японцев слов, грамматических
+          элементов, окончаний глаголов. Применяется в повседневных письменных
+          текстах: романы, газеты личная переписка, в детских книгах и
+          материалах, для учащихся начального уровня
+        </p>
       </section>
     </motion.div>
   );
