@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Stalinist+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Stalinist+One&family=Zen+Antique&display=swap');
 
 @import "tailwindcss";
 
 @theme {
   --font-header: "Stalinist One";
   --font-body: "Montserrat";
+  --font-jp: "Zen Antique";
 }
 
 *::selection {
