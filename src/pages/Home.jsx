@@ -1,4 +1,3 @@
-import JapaneseTransition from "@/shared/JapaneseTransition";
 import { Header } from "@/widgets/Header";
 import { motion } from "framer-motion";
 
@@ -35,7 +34,7 @@ function Home() {
           <motion.button
             drag
             dragConstraints={{ left: 0, right: 500, bottom: 300, top: 0 }}
-            className="px-4 py-2 mt-2 text-base font-bold text-white bg-red-700 cursor-pointer select-none md:px-6 md:text-xl font-body hover:bg-red-800 active:bg-red-900 rounded-4xl"
+            className="px-4 py-2 mt-2 text-base font-bold text-white bg-red-700 cursor-pointer md:px-6 md:text-xl font-body hover:bg-red-800 active:bg-red-900 rounded-4xl"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.5 }}
@@ -44,25 +43,6 @@ function Home() {
           </motion.button>
         </div>
       </motion.div>
-      <div className="h-screen">
-        <div className="text-center">
-          <h1 className="mb-4 text-3xl font-bold md:text-4xl text-slate-800 dark:text-slate-100">
-            Japanese Writing Systems
-          </h1>
-          <p className="mb-8 text-slate-600 dark:text-slate-300">
-            Explore the transition between hiragana (ひらがな) and katakana
-            (カタカナ)
-          </p>
-        </div>
-
-        <JapaneseTransition />
-
-        <div className="mt-12 text-sm text-center text-slate-500 dark:text-slate-400">
-          <p>
-            Click on a character to see the transition between writing systems
-          </p>
-        </div>
-      </div>
     </>
   );
 }
