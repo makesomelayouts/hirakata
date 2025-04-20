@@ -131,35 +131,49 @@ function Hiragana() {
         </p>
       </section>
 
-      <section className="flex flex-col items-center justify-center max-w-[1072px] mx-auto lg:mt-[253px]">
+      <section className="flex flex-col items-center justify-center max-w-[1072px] mx-auto mt-[162px]">
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-center font-header text-5xl">Алфавит</h1>
           <div className="mt-3.5 bg-[#8C5D91] h-2.5 w-full rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-5 gap-8 mt-8 w-full">
-          {chars.map((char, index) => {
-            const jpChar = getJapaneseChar(char);
-            return (
-              <motion.div
-                key={index}
-                className="group flex flex-col items-center justify-center p-4 bg-[#8C5D91]/30 rounded-xl transition-colors relative cursor-pointer"
-                whileHover={{ scale: 1.05 }}
-                onClick={() => AudioManager.play(char)}
-              >
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-[#5B3569] opacity-0 group-hover:opacity-50 rounded-xl transition-opacity" />
-
-                {/* Content */}
-                <p className="font-jp text-6xl z-10 text-[#E7D2D2] group-hover:text-white">
-                  {jpChar}
-                </p>
-                <p className="font-body text-3xl mt-4 z-10 text-white">
-                  {char}
-                </p>
-              </motion.div>
-            );
-          })}
+        <div className="mt-8 w-full space-y-4">
+          {[
+            ["a", "i", "u", "e", "o"],
+            ["ka", "ki", "ku", "ke", "ko"],
+            ["sa", "shi", "su", "se", "so"],
+            ["ta", "chi", "tsu", "te", "to"],
+            ["na", "ni", "nu", "ne", "no"],
+            ["ha", "hi", "fu", "he", "ho"],
+            ["ma", "mi", "mu", "me", "mo"],
+            ["ya", "", "yu", "", "yo"],
+            ["wa", "", "n", "", "wo"],
+          ].map((group, groupIndex) => (
+            <div
+              key={groupIndex}
+              className="flex justify-between space-x-4 bg-[#8C5D91]/20 p-3 rounded-xl"
+            >
+              {group.map((char, charIndex) =>
+                char ? (
+                  <motion.div
+                    key={`${groupIndex}-${charIndex}`}
+                    className="flex-1 flex flex-col items-center justify-center p-2"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <p
+                      className="font-jp text-4xl cursor-pointer hover:text-[#E7D2D2] active:text-[#5B3569]"
+                      onClick={() => AudioManager.play(char)}
+                    >
+                      {getJapaneseChar(char)}
+                    </p>
+                    <p className="font-body text-xl mt-2">{char}</p>
+                  </motion.div>
+                ) : (
+                  <div key={`${groupIndex}-${charIndex}`} className="flex-1" />
+                )
+              )}
+            </div>
+          ))}
         </div>
       </section>
     </motion.div>
