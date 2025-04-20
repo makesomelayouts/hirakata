@@ -1,6 +1,6 @@
-import { Footer } from "@/widgets/Footer";
 import { Header } from "@/widgets/Header";
 import { motion, useSpring, useScroll } from "framer-motion";
+import { Footer } from "@/widgets/Footer";
 
 function Katakana() {
   const { scrollYProgress } = useScroll();
@@ -27,6 +27,8 @@ function Katakana() {
           backgroundColor: "#EBAAC1",
         }}
       />
+
+      <Footer />
     </motion.div>
   );
 }
