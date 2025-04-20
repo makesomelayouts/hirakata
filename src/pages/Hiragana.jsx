@@ -176,6 +176,41 @@ function Hiragana() {
           ))}
         </div>
       </section>
+
+      <section className="flex flex-col items-center justify-center gap-10 max-w-[1200px] mx-auto mt-32">
+        <div className="flex flex-col items-center justify-center px-8">
+          <h1 className="mt-[64px] text-center font-header text-5xl">
+            Примеры слов
+          </h1>
+          <div className="mt-3.5 bg-[#8C5D91] h-2.5 w-full rounded-full"></div>
+        </div>
+
+        <div className="font-body font-bold pt-[43px] pr-[28px] pl-[14px] pb-[37px] bg-[#8C5D91] rounded-[45px] text-2xl">
+          <div className="grid grid-cols-3 gap-x-8 gap-y-4">
+            <div className="font-body text-2xl">Хирагана</div>
+            <div className="text-center">Ромадзи</div>
+            <div className="text-right">Перевод</div>
+
+            {[
+              ["にほん", "нихон", "Япония"],
+              ["にほんご", "нихонго", "японский язык"],
+              ["ひと", "хито", "человек"],
+              ["おとこ", "отоко", "мужчина"],
+              ["おんな", "онна", "женщина"],
+              ["あさ", "аса", "утро"],
+              ["いい", "ий", "хороший, добрый"],
+              ["かく", "каку", "писать"],
+              ["はなす", "ханасу", "говорить"],
+            ].map(([hiragana, romaji, translation], index) => (
+              <div key={`row-${index}`} className="contents">
+                <div className="font-jp text-2xl">{hiragana}</div>
+                <div className="text-center">{romaji}</div>
+                <div className="text-right">{translation}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </motion.div>
   );
 }
