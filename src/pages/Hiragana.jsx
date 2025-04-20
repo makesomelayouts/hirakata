@@ -1,5 +1,6 @@
 import { Header } from "@/widgets/Header";
 import { motion, useSpring, useScroll } from "framer-motion";
+import { useState } from "react";
 
 function Hiragana() {
   const { scrollYProgress } = useScroll();
@@ -8,6 +9,7 @@ function Hiragana() {
     damping: 40,
     restDelta: 0.001,
   });
+  const [activeTab, setActiveTab] = useState("theory");
 
   return (
     <motion.div className="h-screen bg-[url(@/assets/hiragana-bg.jpg)] bg-cover bg-center">
@@ -26,10 +28,6 @@ function Hiragana() {
           backgroundColor: "#EBAAC1",
         }}
       />
-
-      <h1 className="px-6 mt-2 text-2xl font-bold text-center font-body">
-        Хирагана
-      </h1>
     </motion.div>
   );
 }

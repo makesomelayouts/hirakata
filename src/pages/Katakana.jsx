@@ -27,10 +27,6 @@ function Katakana() {
           backgroundColor: "#EBAAC1",
         }}
       />
-
-      <h1 className="px-6 mt-2 text-2xl font-bold text-center font-body">
-        Катакана
-      </h1>
     </motion.div>
   );
 }
