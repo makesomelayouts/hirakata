@@ -23,20 +23,6 @@ function Hiragana() {
     >
       <Header />
 
-      <motion.div
-        id="scroll-indicator"
-        style={{
-          scaleX,
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: 10,
-          originY: -0,
-          backgroundColor: "#7C5185",
-          zIndex: 20,
-        }}
-      />
       <section className="flex flex-col items-center justify-center lg:flex-row gap-[78px]">
         <div className="flex flex-col items-center justify-center">
           <h1 className="mt-[64px] text-center font-header text-5xl">
