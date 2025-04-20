@@ -46,6 +46,6 @@
   cursor: url(assets/neo-nyan-pointer.png), pointer;
 }
 
-body {
-  overflow: hidden;
+.app .cursor-pointer {
+  cursor: url(assets/neo-nyan-pointer.png), pointer;
 }
