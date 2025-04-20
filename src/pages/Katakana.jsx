@@ -20,20 +20,6 @@ function Katakana() {
     >
       <Header />
 
-      <motion.div
-        id="scroll-indicator"
-        style={{
-          scaleX,
-          position: "fixed",
-          top: 90,
-          left: 0,
-          right: 0,
-          height: 10,
-          originX: 0,
-          backgroundColor: "#EBAAC1",
-        }}
-      />
-
       <Footer />
     </motion.div>
   );
