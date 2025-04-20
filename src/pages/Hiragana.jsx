@@ -4,6 +4,7 @@ import fujiyama from "@/assets/Гора Фудзи.png";
 import toriiGate from "@/assets/torii-gate.png";
 import japaneseFlag from "@/assets/japan.png";
 import hiraganaA from "@/assets/audio/hiragana/a-1.mp3";
+import shadow from "@/assets/Затемнение под шапку.png";
 
 function Hiragana() {
   const { scrollYProgress } = useScroll();
@@ -92,6 +93,13 @@ function Hiragana() {
           текстах: романы, газеты личная переписка, в детских книгах и
           материалах, для учащихся начального уровня
         </p>
+      </section>
+
+      <section className="flex flex-col items-center justify-center max-w-[1072px] mx-auto">
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="text-center font-header text-5xl">Алфавит</h1>
+          <div className="mt-3.5 bg-[#8C5D91] h-2.5 w-full rounded-full"></div>
+        </div>
       </section>
     </motion.div>
   );
