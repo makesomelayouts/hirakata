@@ -139,20 +139,24 @@ function Hiragana() {
 
         <div className="grid grid-cols-5 gap-8 mt-8 w-full">
           {chars.map((char, index) => {
-            const jpChar = getJapaneseChar(char); // Функция для получения японского символа
+            const jpChar = getJapaneseChar(char);
             return (
               <motion.div
                 key={index}
-                className="flex flex-col items-center justify-center p-4 bg-[#8C5D91]/30 rounded-xl hover:bg-[#8C5D91]/50 transition-colors"
+                className="group flex flex-col items-center justify-center p-4 bg-[#8C5D91]/30 rounded-xl transition-colors relative cursor-pointer"
                 whileHover={{ scale: 1.05 }}
+                onClick={() => AudioManager.play(char)}
               >
-                <p
-                  className="font-jp text-6xl cursor-pointer hover:text-[#E7D2D2] active:text-[#5B3569]"
-                  onClick={() => AudioManager.play(char)}
-                >
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-[#5B3569] opacity-0 group-hover:opacity-50 rounded-xl transition-opacity" />
+
+                {/* Content */}
+                <p className="font-jp text-6xl z-10 text-[#E7D2D2] group-hover:text-white">
                   {jpChar}
                 </p>
-                <p className="font-body text-3xl mt-4">{char}</p>
+                <p className="font-body text-3xl mt-4 z-10 text-white">
+                  {char}
+                </p>
               </motion.div>
             );
           })}
