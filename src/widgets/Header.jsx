@@ -5,18 +5,7 @@ export const Header = () => {
   let location = useLocation();
 
   return (
-    <header
-      className={`${
-        location.pathname == "/hiragana"
-          ? "bg-[#EAB2CF] border-b border-[#5B3569]"
-          : ""
-      }
-      ${
-        location.pathname == "/katakana"
-          ? "bg-[#AC8AA2] border-b border-[#ebaac1]"
-          : ""
-      } sticky top-0 left-0 right-0 p-6 z-10`}
-    >
+    <header className="p-6 z-10">
       <div className="flex items-center justify-center gap-5">
         <TransitionLink
           className={`${
