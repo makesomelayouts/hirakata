@@ -13,7 +13,7 @@ function Home() {
             className="text-3xl font-normal md:text-5xl font-header"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 2 }}
             drag
             dragConstraints={{ left: 0, right: 500, bottom: 300, top: 0 }}
           >
@@ -24,7 +24,7 @@ function Home() {
             className="max-w-2xl my-[22px] text-base md:text-xl font-bold text-white font-body"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 1, delay: 1 }}
             drag
             dragConstraints={{ left: 0, right: 500, bottom: 300, top: 0 }}
           >
@@ -38,7 +38,7 @@ function Home() {
             className="px-4 py-2 mt-2 text-base font-bold text-white bg-red-700 cursor-pointer select-none md:px-6 md:text-xl font-body hover:bg-red-800 active:bg-red-900 rounded-4xl"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1 }}
+            transition={{ duration: 1, delay: 1.5 }}
           >
             Приступить
           </motion.button>
