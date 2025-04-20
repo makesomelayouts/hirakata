@@ -11,7 +11,13 @@ function Katakana() {
   });
 
   return (
-    <motion.div className="h-screen">
+    <motion.div
+      className="h-screen"
+      style={{
+        background:
+          "linear-gradient(179.92deg, #69507D -52.19%, #B98396 61.17%)",
+      }}
+    >
       <Header />
 
       <motion.div
