@@ -4,7 +4,6 @@ import fujiyama from "@/assets/Гора Фудзи.png";
 import toriiGate from "@/assets/torii-gate.png";
 import japaneseFlag from "@/assets/japan.png";
 import hiraganaA from "@/assets/audio/hiragana/a-1.mp3";
-import shadow from "@/assets/Затемнение под шапку.png";
 
 function Hiragana() {
   const { scrollYProgress } = useScroll();
@@ -15,7 +14,13 @@ function Hiragana() {
   });
 
   return (
-    <motion.div className="min-h-screen bg-[url(@/assets/hiragana-bg.jpg)] bg-cover bg-center">
+    <motion.div
+      className="min-h-screen"
+      style={{
+        background:
+          "linear-gradient(179.92deg, #C06BC9 -52.19%, #EBAAC1 61.17%)",
+      }}
+    >
       <Header />
 
       <motion.div
@@ -23,11 +28,11 @@ function Hiragana() {
         style={{
           scaleX,
           position: "fixed",
-          top: 90,
+          top: 0,
           left: 0,
           right: 0,
           height: 10,
-          originX: 0,
+          originY: -0,
           backgroundColor: "#7C5185",
           zIndex: 20,
         }}
