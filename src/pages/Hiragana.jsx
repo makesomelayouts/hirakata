@@ -25,9 +25,13 @@ function Hiragana() {
           right: 0,
           height: 10,
           originX: 0,
-          backgroundColor: "#EBAAC1",
+          backgroundColor: "#7C5185",
         }}
       />
+
+      <section>
+        <h1 className="text-2xl text-center font-header text-5xl">Хирагана</h1>
+      </section>
     </motion.div>
   );
 }
