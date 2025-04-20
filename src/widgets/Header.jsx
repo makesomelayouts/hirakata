@@ -16,7 +16,7 @@ export const Header = () => {
           location.pathname == "/katakana"
             ? "bg-[#AC8AA2] border-b border-[#ebaac1]"
             : ""
-        } sticky top-0 left-0 right-0 p-6`}
+        } sticky top-0 left-0 right-0 p-6 z-10`}
     >
       <div className="flex items-center justify-center gap-5">
         <TransitionLink
