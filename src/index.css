@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Stalinist+One&family=Zen+Antique&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Stalinist+One&family=Zen+Antique&display=swap");
 
 @import "tailwindcss";
 
@@ -9,7 +9,7 @@
 }
 
 *::selection {
-  background: #C192C6;
+  background: #c192c6;
 }
 
 /* CUSTOM SCROLLBAR */
@@ -20,20 +20,19 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #EBAAC1;
-  box-shadow: inset 0 0 5px #8C5D91;
-
+  background: #ebaac1;
+  box-shadow: inset 0 0 5px #8c5d91;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #8C5D91;
+  background: #8c5d91;
   border-radius: 50px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #7C5185;
+  background: #7c5185;
   cursor: url(assets/neo-nyan-pointer.png), auto;
 }
 
@@ -42,7 +41,8 @@
   cursor: url(assets/neo-nyan-cursor.png), auto;
 }
 
-.app button, .app a {
+.app button,
+.app a {
   cursor: url(assets/neo-nyan-pointer.png), pointer;
 }
 
