@@ -11,7 +11,7 @@ function Katakana() {
   });
 
   return (
-    <motion.div className="h-screen bg-[url(@/assets/katakana-bg.jpg)] bg-cover">
+    <motion.div className="h-screen">
       <Header />
 
       <motion.div
