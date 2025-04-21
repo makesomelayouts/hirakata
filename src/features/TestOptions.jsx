@@ -44,21 +44,6 @@ export default function TestOptions({ onStartTest }) {
               <option value={50}>50 вопросов</option>
             </select>
           </div>
-
-          <div>
-            <label className="cursor-auto block text-xl font-body mb-2">
-              Сложность:
-            </label>
-            <select
-              value={difficulty}
-              onChange={(e) => setDifficulty(e.target.value)}
-              className="w-full p-3 cursor-auto rounded-lg bg-[#7C5185] border-2 border-[#5B3569]"
-            >
-              <option value="all cursor-pointer">Все символы</option>
-              <option value="basic">Только базовые</option>
-              <option value="dakuten">С дакутэн и хандакутэн</option>
-            </select>
-          </div>
         </div>
 
         <button
