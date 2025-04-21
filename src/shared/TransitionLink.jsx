@@ -1,7 +1,6 @@
-// components/TransitionLink.jsx
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { TransitionContext } from "../App"; // Adjust the import path as needed
+import { TransitionContext } from "../App";
 
 export const TransitionLink = ({ to, children, ...props }) => {
   const { startTransition } = useContext(TransitionContext);
