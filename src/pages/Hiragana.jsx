@@ -5,6 +5,7 @@ import toriiGate from "@/assets/torii-gate.png";
 import japaneseFlag from "@/assets/japan.png";
 import { AudioManager } from "@/utils/audioManager";
 import { getJapaneseChar } from "@/utils/japaneseChars";
+import Quiz from "@/features/Quiz";
 
 function Hiragana() {
   const { scrollYProgress } = useScroll();
@@ -175,6 +176,10 @@ function Hiragana() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="my-16">
+        <Quiz />
       </section>
 
       <section className="flex flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto mt-32">
