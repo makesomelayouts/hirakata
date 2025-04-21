@@ -1,3 +1,4 @@
+import { TransitionLink } from "@/shared/TransitionLink";
 import { Header } from "@/widgets/Header";
 import { motion } from "framer-motion";
 
@@ -47,24 +48,49 @@ function Home() {
             практике изучения и тестирования иероглифов хираганы и катаканы
           </motion.p>
 
-          <motion.button
-            drag
-            dragConstraints={{
-              top: -125,
-              right: 125,
-              bottom: 125,
-              left: -125,
-            }}
-            dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-            dragElastic={0.5}
-            whileTap={{ cursor: "grabbing" }}
-            className="px-4 py-2 mt-2 text-base font-bold text-white bg-red-700 cursor-pointer md:px-6 md:text-xl font-body hover:bg-red-800 active:bg-red-900 rounded-4xl"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.5 }}
-          >
-            Приступить
-          </motion.button>
+          <div className="flex gap-[22px]">
+            <TransitionLink to="/hiragana">
+              <motion.button
+                drag
+                dragConstraints={{
+                  top: -125,
+                  right: 125,
+                  bottom: 125,
+                  left: -125,
+                }}
+                dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+                dragElastic={0.5}
+                whileTap={{ cursor: "grabbing" }}
+                className="px-4 py-2 mt-2 text-base font-bold text-white bg-red-700 cursor-pointer md:px-6 md:text-xl font-body hover:bg-red-800 active:bg-red-900 rounded-4xl"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.5 }}
+              >
+                Хирагана
+              </motion.button>
+            </TransitionLink>
+
+            <TransitionLink to="/katakana">
+              <motion.button
+                drag
+                dragConstraints={{
+                  top: -125,
+                  right: 125,
+                  bottom: 125,
+                  left: -125,
+                }}
+                dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+                dragElastic={0.5}
+                whileTap={{ cursor: "grabbing" }}
+                className="px-4 py-2 mt-2 text-base font-bold text-white bg-red-700 cursor-pointer md:px-6 md:text-xl font-body hover:bg-red-800 active:bg-red-900 rounded-4xl"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 2 }}
+              >
+                Катакана
+              </motion.button>
+            </TransitionLink>
+          </div>
         </div>
       </motion.div>
     </>
