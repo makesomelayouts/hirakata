@@ -21,16 +21,6 @@ export const Footer = () => {
         </a>{" "}
         &#125;
       </div>
-
-      <div>
-        <p className="inline-block">Исходный код лицензирован под</p>{" "}
-        <a
-          className="font-bold inline-block hover:underline"
-          href="http://opensource.org/licenses/mit-license.php"
-        >
-          MIT
-        </a>
-      </div>
     </footer>
   );
 };
