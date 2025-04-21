@@ -6,14 +6,19 @@ import japaneseFlag from "@/assets/japan.png";
 import { AudioManager } from "@/utils/audioManager";
 import { getJapaneseChar } from "@/utils/japaneseChars";
 import Quiz from "@/features/Quiz";
+import TestOptions from "@/features/TestOptions";
+import { Achievements } from "../features/Achievements";
+import { useState } from "react";
 
 function Hiragana() {
+  const [testConfig, setTestConfig] = useState(null);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 40,
     restDelta: 0.001,
   });
+
   const chars = [
     "a",
     "i",
@@ -178,9 +183,20 @@ function Hiragana() {
         </div>
       </section>
 
+      
       <section className="my-16">
-        <Quiz />
-      </section>
+  {testConfig ? (
+    <Quiz 
+      config={testConfig} 
+      onFinish={() => setTestConfig(null)}
+    />
+  ) : (
+    <div className="space-y-16">
+      <TestOptions onStartTest={setTestConfig} />
+      <Achievements />
+    </div>
+  )}
+</section>
 
       <section className="flex flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto mt-32">
         <div className="flex flex-col items-center justify-center px-8">
