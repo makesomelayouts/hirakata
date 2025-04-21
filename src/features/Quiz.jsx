@@ -4,101 +4,70 @@ import { getJapaneseChar } from "@/utils/japaneseChars";
 
 const hiraganaData = [
   // Гласные
-  { symbol: "あ", romaji: "a", group: "basic" },
-  { symbol: "い", romaji: "i", group: "basic" },
-  { symbol: "う", romaji: "u", group: "basic" },
-  { symbol: "え", romaji: "e", group: "basic" },
-  { symbol: "お", romaji: "o", group: "basic" },
+  { symbol: "あ", romaji: "a" },
+  { symbol: "い", romaji: "i" },
+  { symbol: "う", romaji: "u" },
+  { symbol: "え", romaji: "e" },
+  { symbol: "お", romaji: "o" },
 
   // Строка K
-  { symbol: "か", romaji: "ka", group: "basic" },
-  { symbol: "き", romaji: "ki", group: "basic" },
-  { symbol: "く", romaji: "ku", group: "basic" },
-  { symbol: "け", romaji: "ke", group: "basic" },
-  { symbol: "こ", romaji: "ko", group: "basic" },
-  { symbol: "が", romaji: "ga", group: "dakuten" },
-  { symbol: "ぎ", romaji: "gi", group: "dakuten" },
-  { symbol: "ぐ", romaji: "gu", group: "dakuten" },
-  { symbol: "げ", romaji: "ge", group: "dakuten" },
-  { symbol: "ご", romaji: "go", group: "dakuten" },
+  { symbol: "か", romaji: "ka" },
+  { symbol: "き", romaji: "ki" },
+  { symbol: "く", romaji: "ku" },
+  { symbol: "け", romaji: "ke" },
+  { symbol: "こ", romaji: "ko" },
 
   // Строка S
-  { symbol: "さ", romaji: "sa", group: "basic" },
-  { symbol: "し", romaji: "shi", group: "basic" },
-  { symbol: "す", romaji: "su", group: "basic" },
-  { symbol: "せ", romaji: "se", group: "basic" },
-  { symbol: "そ", romaji: "so", group: "basic" },
-  { symbol: "ざ", romaji: "za", group: "dakuten" },
-  { symbol: "じ", romaji: "ji", group: "dakuten" },
-  { symbol: "ず", romaji: "zu", group: "dakuten" },
-  { symbol: "ぜ", romaji: "ze", group: "dakuten" },
-  { symbol: "ぞ", romaji: "zo", group: "dakuten" },
+  { symbol: "さ", romaji: "sa" },
+  { symbol: "し", romaji: "shi" },
+  { symbol: "す", romaji: "su" },
+  { symbol: "せ", romaji: "se" },
+  { symbol: "そ", romaji: "so" },
 
   // Строка T
-  { symbol: "た", romaji: "ta", group: "basic" },
-  { symbol: "ち", romaji: "chi", group: "basic" },
-  { symbol: "つ", romaji: "tsu", group: "basic" },
-  { symbol: "て", romaji: "te", group: "basic" },
-  { symbol: "と", romaji: "to", group: "basic" },
-  { symbol: "だ", romaji: "da", group: "dakuten" },
-  { symbol: "ぢ", romaji: "ji", group: "dakuten" },
-  { symbol: "づ", romaji: "zu", group: "dakuten" },
-  { symbol: "で", romaji: "de", group: "dakuten" },
-  { symbol: "ど", romaji: "do", group: "dakuten" },
+  { symbol: "た", romaji: "ta" },
+  { symbol: "ち", romaji: "chi" },
+  { symbol: "つ", romaji: "tsu" },
+  { symbol: "て", romaji: "te" },
+  { symbol: "と", romaji: "to" },
 
   // Строка N
-  { symbol: "な", romaji: "na", group: "basic" },
-  { symbol: "に", romaji: "ni", group: "basic" },
-  { symbol: "ぬ", romaji: "nu", group: "basic" },
-  { symbol: "ね", romaji: "ne", group: "basic" },
-  { symbol: "の", romaji: "no", group: "basic" },
+  { symbol: "な", romaji: "na" },
+  { symbol: "に", romaji: "ni" },
+  { symbol: "ぬ", romaji: "nu" },
+  { symbol: "ね", romaji: "ne" },
+  { symbol: "の", romaji: "no" },
 
   // Строка H
-  { symbol: "は", romaji: "ha", group: "basic" },
-  { symbol: "ひ", romaji: "hi", group: "basic" },
-  { symbol: "ふ", romaji: "fu", group: "basic" },
-  { symbol: "へ", romaji: "he", group: "basic" },
-  { symbol: "ほ", romaji: "ho", group: "basic" },
-  { symbol: "ば", romaji: "ba", group: "dakuten" },
-  { symbol: "び", romaji: "bi", group: "dakuten" },
-  { symbol: "ぶ", romaji: "bu", group: "dakuten" },
-  { symbol: "べ", romaji: "be", group: "dakuten" },
-  { symbol: "ぼ", romaji: "bo", group: "dakuten" },
-  { symbol: "ぱ", romaji: "pa", group: "handakuten" },
-  { symbol: "ぴ", romaji: "pi", group: "handakuten" },
-  { symbol: "ぷ", romaji: "pu", group: "handakuten" },
-  { symbol: "ぺ", romaji: "pe", group: "handakuten" },
-  { symbol: "ぽ", romaji: "po", group: "handakuten" },
+  { symbol: "は", romaji: "ha" },
+  { symbol: "ひ", romaji: "hi" },
+  { symbol: "ふ", romaji: "fu" },
+  { symbol: "へ", romaji: "he" },
+  { symbol: "ほ", romaji: "ho" },
 
   // Строка M
-  { symbol: "ま", romaji: "ma", group: "basic" },
-  { symbol: "み", romaji: "mi", group: "basic" },
-  { symbol: "む", romaji: "mu", group: "basic" },
-  { symbol: "め", romaji: "me", group: "basic" },
-  { symbol: "も", romaji: "mo", group: "basic" },
+  { symbol: "ま", romaji: "ma" },
+  { symbol: "み", romaji: "mi" },
+  { symbol: "む", romaji: "mu" },
+  { symbol: "め", romaji: "me" },
+  { symbol: "も", romaji: "mo" },
 
   // Строка Y
-  { symbol: "や", romaji: "ya", group: "basic" },
-  { symbol: "ゆ", romaji: "yu", group: "basic" },
-  { symbol: "よ", romaji: "yo", group: "basic" },
+  { symbol: "や", romaji: "ya" },
+  { symbol: "ゆ", romaji: "yu" },
+  { symbol: "よ", romaji: "yo" },
 
   // Строка R
-  { symbol: "ら", romaji: "ra", group: "basic" },
-  { symbol: "り", romaji: "ri", group: "basic" },
-  { symbol: "る", romaji: "ru", group: "basic" },
-  { symbol: "れ", romaji: "re", group: "basic" },
-  { symbol: "ろ", romaji: "ro", group: "basic" },
+  { symbol: "ら", romaji: "ra" },
+  { symbol: "り", romaji: "ri" },
+  { symbol: "る", romaji: "ru" },
+  { symbol: "れ", romaji: "re" },
+  { symbol: "ろ", romaji: "ro" },
 
   // Строка W/N
-  { symbol: "わ", romaji: "wa", group: "basic" },
-  { symbol: "を", romaji: "wo", group: "basic" },
-  { symbol: "ん", romaji: "n", group: "basic" },
-
-  // Дополнительные маленькие символы
-  { symbol: "ゃ", romaji: "ya", group: "small" },
-  { symbol: "ゅ", romaji: "yu", group: "small" },
-  { symbol: "ょ", romaji: "yo", group: "small" },
-  { symbol: "っ", romaji: "(sokuon)", group: "small" },
+  { symbol: "わ", romaji: "wa" },
+  { symbol: "を", romaji: "wo" },
+  { symbol: "ん", romaji: "n" },
 ];
 
 const Quiz = ({ config, onFinish }) => {
@@ -117,11 +86,8 @@ const Quiz = ({ config, onFinish }) => {
     // Добавляем проверку на наличие символов
     if (!hiraganaData.length) return [];
 
-    let filteredChars = hiraganaData.filter((char) => {
-      if (config.difficulty === "dakuten") return char.group === "dakuten";
-      if (config.difficulty === "basic") return char.group === "basic";
-      return true;
-    });
+    // Упрощенная фильтрация - используем все символы
+    const filteredChars = hiraganaData;
 
     // Добавляем проверку на минимальное количество символов
     if (filteredChars.length < 4) {
