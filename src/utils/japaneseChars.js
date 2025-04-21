@@ -68,6 +68,77 @@ export const hiraganaMap = {
   n: "ん",
 };
 
-export const getJapaneseChar = (romaji) => {
-  return hiraganaMap[romaji] || "?";
+export const katakanaMap = {
+  // Basic vowels
+  a: "ア",
+  i: "イ",
+  u: "ウ",
+  e: "エ",
+  o: "オ",
+
+  // K-row
+  ka: "カ",
+  ki: "キ",
+  ku: "ク",
+  ke: "ケ",
+  ko: "コ",
+
+  // S-row
+  sa: "サ",
+  shi: "シ",
+  su: "ス",
+  se: "セ",
+  so: "ソ",
+
+  // T-row
+  ta: "タ",
+  chi: "チ",
+  tsu: "ツ",
+  te: "テ",
+  to: "ト",
+
+  // N-row
+  na: "ナ",
+  ni: "ニ",
+  nu: "ヌ",
+  ne: "ネ",
+  no: "ノ",
+
+  // H-row
+  ha: "ハ",
+  hi: "ヒ",
+  fu: "フ",
+  he: "ヘ",
+  ho: "ホ",
+
+  // M-row
+  ma: "マ",
+  mi: "ミ",
+  mu: "ム",
+  me: "メ",
+  mo: "モ",
+
+  // Y-row
+  ya: "ヤ",
+  yu: "ユ",
+  yo: "ヨ",
+
+  // R-row
+  ra: "ラ",
+  ri: "リ",
+  ru: "ル",
+  re: "レ",
+  ro: "ロ",
+
+  // W-row
+  wa: "ワ",
+  wo: "ヲ",
+
+  // N
+  n: "ン",
+};
+
+export const getJapaneseChar = (romaji, type = "hiragana") => {
+  const map = type === "katakana" ? katakanaMap : hiraganaMap;
+  return map[romaji] || "?";
 };
