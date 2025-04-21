@@ -183,26 +183,20 @@ function Hiragana() {
         </div>
       </section>
 
-      
-      <section className="my-16">
-  {testConfig ? (
-    <Quiz 
-      config={testConfig} 
-      onFinish={() => setTestConfig(null)}
-    />
-  ) : (
-    <div className="space-y-16">
-      <TestOptions onStartTest={setTestConfig} />
-      <Achievements />
-    </div>
-  )}
-</section>
+      <section className="mt-16">
+        {testConfig ? (
+          <Quiz config={testConfig} onFinish={() => setTestConfig(null)} />
+        ) : (
+          <div className="space-y-16">
+            <TestOptions onStartTest={setTestConfig} />
+            <Achievements />
+          </div>
+        )}
+      </section>
 
-      <section className="flex flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto mt-32">
+      <section className="flex flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto py-16">
         <div className="flex flex-col items-center justify-center px-8">
-          <h1 className="mt-[64px] text-center font-header text-5xl">
-            Примеры слов
-          </h1>
+          <h1 className="text-center font-header text-5xl">Примеры слов</h1>
           <div className="mt-3.5 bg-[#8C5D91] h-2.5 w-full rounded-full"></div>
         </div>
 
