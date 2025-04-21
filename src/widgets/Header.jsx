@@ -5,7 +5,7 @@ export const Header = () => {
   let location = useLocation();
 
   return (
-    <header className="p-6 z-10">
+    <header className="p-6 z-10 hidden sm:block">
       <div className="flex items-center justify-center gap-5">
         <TransitionLink
           className={`${

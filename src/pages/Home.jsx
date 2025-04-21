@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 function Home() {
   return (
     <>
-      <motion.div className="h-screen bg-[url(@/assets/bg.jpg)] bg-cover">
+      <motion.div className="h-screen bg-[url(@/assets/bg.jpg)] bg-cover max-sm:pt-4">
         <Header />
 
         <div className="flex flex-col items-baseline justify-center ml-10 text-left text-white mt-16 lg:mt-52 md:ml-32 xl:ml-80 xl:mt-64">
