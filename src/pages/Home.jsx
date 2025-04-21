@@ -8,7 +8,7 @@ function Home() {
       <motion.div className="h-screen bg-[url(@/assets/bg.jpg)] bg-cover">
         <Header />
 
-        <div className="flex flex-col items-baseline justify-center ml-10 text-left text-white mt-52 md:ml-32 xl:ml-80 xl:mt-64">
+        <div className="flex flex-col items-baseline justify-center ml-10 text-left text-white mt-16 lg:mt-52 md:ml-32 xl:ml-80 xl:mt-64">
           <motion.h1
             className="text-3xl font-normal md:text-5xl font-header"
             initial={{ opacity: 0, y: -20 }}
