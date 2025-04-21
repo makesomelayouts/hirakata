@@ -78,9 +78,9 @@ function Hiragana() {
     >
       <Header />
 
-      <section className="flex flex-col items-center justify-center lg:flex-row gap-[78px]">
+      <section className="z-20 flex flex-col items-center justify-center lg:flex-row gap-[78px]">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="mt-[64px] text-center font-header text-5xl">
+          <h1 className="z-30 mt-[64px] text-center font-header text-5xl">
             Хирагана
           </h1>
           <div className="mt-3.5 bg-[#8C5D91] h-2.5 w-full rounded-full"></div>
@@ -92,7 +92,7 @@ function Hiragana() {
           />
         </div>
 
-        <div className="flex flex-col max-w-lg items-center justify-center bg-[#8C5D91] px-6 py-5 rounded-[45px] mt-6">
+        <div className="z-30 flex flex-col max-w-lg items-center justify-center bg-[#8C5D91] px-6 py-5 rounded-[45px] mt-6">
           <p className="font-body text-2xl font-bold text-right">
             — японская слоговая азбука, одна из составляющих японской
             письменности наряду с катаканой, иероглифами, арабскими цифрами и
