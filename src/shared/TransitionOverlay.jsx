@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function TransitionOverlay({ title, subtitle }) {
   return (
     <motion.div
-      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#2F2F2F]"
+      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#361D3D]"
       initial={{ clipPath: "circle(0% at 50% 50%)" }}
       animate={{ clipPath: "circle(150% at 50% 50%)" }}
       exit={{ clipPath: "circle(0% at 50% 50%)" }}
