@@ -5,7 +5,20 @@ export const Header = () => {
   let location = useLocation();
 
   return (
-    <header className="p-6 z-10 hidden sm:block">
+    <header className="relative z-10 p-6">
+      {/* <div
+        className="absolute top-0 left-0 w-full -z-20 h-64"
+        style={{
+          background:
+            "linear-gradient(1.59deg, rgba(125, 88, 129, 0) 1.35%, rgba(0, 0, 0, 0.75) 98.65%)",
+        }}
+      /> */}
+
+      <img
+        src="/src/assets/Затемнение под шапку.png"
+        className="absolute top-0 left-0 w-full -z-20 h-64"
+      />
+
       <div className="flex items-center justify-center gap-5">
         <TransitionLink
           className={`${
