@@ -3,7 +3,7 @@ export const Footer = () => {
     <footer class="w-full mt-4 p-6 flex flex-col md:flex-row justify-between items-center text-center border-t border-gray-200">
       <div>
         <p className="inline">{`© ${new Date().getFullYear()}`}</p>{" "}
-        <strong>HiraKata</strong> от &#123; idea+code:{" "}
+        <strong>ХираКата</strong> от &#123; code:{" "}
         <a
           className="hover:underline"
           href="https://t.me/maxelonej"
@@ -11,7 +11,7 @@ export const Footer = () => {
         >
           maxelonej
         </a>
-        , design:{" "}
+        , ux/ui:{" "}
         <a
           className="hover:underline"
           href="https://t.me/ekarq"
