@@ -14,13 +14,15 @@ export default function TestOptions({ onStartTest }) {
     <div className="w-full max-w-4xl mx-auto p-6 bg-[#8C5D91] rounded-[45px] mt-16">
       <h2 className="text-3xl font-header text-center mb-6">Выбор теста</h2>
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="space-y-4">
+        <div className="space-y-4 cursor-auto">
           <div>
-            <label className="block text-xl font-body mb-2">Тип теста:</label>
+            <label className="block text-xl cursor-auto font-body mb-2">
+              Тип теста:
+            </label>
             <select
               value={testType}
               onChange={(e) => setTestType(e.target.value)}
-              className="w-full p-3 rounded-lg bg-[#7C5185] border-2 border-[#5B3569]"
+              className="w-full p-3 cursor-auto rounded-lg bg-[#7C5185] border-2 border-[#5B3569]"
             >
               <option value="symbol-to-romaji">Символ → Ромадзи</option>
               <option value="romaji-to-symbol">Ромадзи → Символ</option>
@@ -29,13 +31,13 @@ export default function TestOptions({ onStartTest }) {
           </div>
 
           <div>
-            <label className="block text-xl font-body mb-2">
+            <label className="block text-xl cursor-auto font-body mb-2">
               Количество вопросов:
             </label>
             <select
               value={questionCount}
               onChange={(e) => setQuestionCount(Number(e.target.value))}
-              className="w-full p-3 rounded-lg bg-[#7C5185] border-2 border-[#5B3569]"
+              className="w-full p-3 rounded-lg cursor-auto bg-[#7C5185] border-2 border-[#5B3569]"
             >
               <option value={10}>10 вопросов</option>
               <option value={20}>20 вопросов</option>
@@ -44,13 +46,15 @@ export default function TestOptions({ onStartTest }) {
           </div>
 
           <div>
-            <label className="block text-xl font-body mb-2">Сложность:</label>
+            <label className="cursor-auto block text-xl font-body mb-2">
+              Сложность:
+            </label>
             <select
               value={difficulty}
               onChange={(e) => setDifficulty(e.target.value)}
-              className="w-full p-3 rounded-lg bg-[#7C5185] border-2 border-[#5B3569]"
+              className="w-full p-3 cursor-auto rounded-lg bg-[#7C5185] border-2 border-[#5B3569]"
             >
-              <option value="all">Все символы</option>
+              <option value="all cursor-pointer">Все символы</option>
               <option value="basic">Только базовые</option>
               <option value="dakuten">С дакутэн и хандакутэн</option>
             </select>
