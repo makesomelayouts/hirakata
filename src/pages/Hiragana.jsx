@@ -185,11 +185,14 @@ function Hiragana() {
 
       <section className="mt-16">
         {testConfig ? (
-          <Quiz config={testConfig} onFinish={() => setTestConfig(null)} />
+          <Quiz
+            config={{ ...testConfig, alphabet: "hiragana" }}
+            onFinish={() => setTestConfig(null)}
+          />
         ) : (
           <div className="space-y-16">
             <TestOptions onStartTest={setTestConfig} />
-            <Achievements />
+            <Achievements alphabet="hiragana" />
           </div>
         )}
       </section>

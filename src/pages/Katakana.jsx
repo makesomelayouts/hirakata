@@ -184,13 +184,16 @@ function Katakana() {
         </div>
       </section>
 
-      <section className="mt-16">
+      <section className="my-16">
         {testConfig ? (
-          <Quiz config={testConfig} onFinish={() => setTestConfig(null)} />
+          <Quiz
+            config={{ ...testConfig, alphabet: "katakana" }}
+            onFinish={() => setTestConfig(null)}
+          />
         ) : (
           <div className="space-y-16">
             <TestOptions onStartTest={setTestConfig} />
-            <Achievements />
+            <Achievements alphabet="katakana" />
           </div>
         )}
       </section>

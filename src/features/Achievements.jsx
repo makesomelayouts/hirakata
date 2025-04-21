@@ -39,14 +39,14 @@ const INITIAL_ACHIEVEMENTS = [
   },
 ];
 
-export function Achievements() {
+export function Achievements({ alphabet = "hiragana" }) {
   const [achievements, setAchievements] = useState(INITIAL_ACHIEVEMENTS);
   const [progress, setProgress] = useState({});
 
   useEffect(() => {
-    const savedProgress = JSON.parse(
-      localStorage.getItem("hiraganaProgress") || "{}"
-    );
+    const storageKey = `${alphabet}Progress`;
+    const savedProgress = JSON.parse(localStorage.getItem(storageKey) || "{}");
+
     const savedAchievements = JSON.parse(
       localStorage.getItem("achievements") || "[]"
     );
@@ -59,7 +59,7 @@ export function Achievements() {
 
     setAchievements(merged);
     setProgress(savedProgress);
-  }, []);
+  }, [alphabet]);
 
   useEffect(() => {
     const checkUnlocked = () => {
