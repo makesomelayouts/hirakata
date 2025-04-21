@@ -70,7 +70,81 @@ const hiraganaData = [
   { symbol: "ん", romaji: "n" },
 ];
 
+// Замените hiraganaData на katakanaData
+const katakanaData = [
+  // Гласные
+  { symbol: "ア", romaji: "a" },
+  { symbol: "イ", romaji: "i" },
+  { symbol: "ウ", romaji: "u" },
+  { symbol: "エ", romaji: "e" },
+  { symbol: "オ", romaji: "o" },
+
+  // K-row
+  { symbol: "カ", romaji: "ka" },
+  { symbol: "キ", romaji: "ki" },
+  { symbol: "ク", romaji: "ku" },
+  { symbol: "ケ", romaji: "ke" },
+  { symbol: "コ", romaji: "ko" },
+
+  // S-row
+  { symbol: "サ", romaji: "sa" },
+  { symbol: "シ", romaji: "shi" },
+  { symbol: "ス", romaji: "su" },
+  { symbol: "セ", romaji: "se" },
+  { symbol: "ソ", romaji: "so" },
+
+  // T-row
+  { symbol: "タ", romaji: "ta" },
+  { symbol: "チ", romaji: "chi" },
+  { symbol: "ツ", romaji: "tsu" },
+  { symbol: "テ", romaji: "te" },
+  { symbol: "ト", romaji: "to" },
+
+  // N-row
+  { symbol: "ナ", romaji: "na" },
+  { symbol: "ニ", romaji: "ni" },
+  { symbol: "ヌ", romaji: "nu" },
+  { symbol: "ネ", romaji: "ne" },
+  { symbol: "ノ", romaji: "no" },
+
+  // H-row
+  { symbol: "ハ", romaji: "ha" },
+  { symbol: "ヒ", romaji: "hi" },
+  { symbol: "フ", romaji: "fu" },
+  { symbol: "ヘ", romaji: "he" },
+  { symbol: "ホ", romaji: "ho" },
+
+  // M-row
+  { symbol: "マ", romaji: "ma" },
+  { symbol: "ミ", romaji: "mi" },
+  { symbol: "ム", romaji: "mu" },
+  { symbol: "メ", romaji: "me" },
+  { symbol: "モ", romaji: "mo" },
+
+  // Y-row
+  { symbol: "ヤ", romaji: "ya" },
+  { symbol: "ユ", romaji: "yu" },
+  { symbol: "ヨ", romaji: "yo" },
+
+  // R-row
+  { symbol: "ラ", romaji: "ra" },
+  { symbol: "リ", romaji: "ri" },
+  { symbol: "ル", romaji: "ru" },
+  { symbol: "レ", romaji: "re" },
+  { symbol: "ロ", romaji: "ro" },
+
+  // W-row
+  { symbol: "ワ", romaji: "wa" },
+  { symbol: "ヲ", romaji: "wo" },
+
+  // N
+  { symbol: "ン", romaji: "n" },
+];
+
 const Quiz = ({ config, onFinish }) => {
+  // Выбираем данные по алфавиту
+  const currentData =
+    config.alphabet === "katakana" ? katakanaData : hiraganaData;
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -83,11 +157,10 @@ const Quiz = ({ config, onFinish }) => {
   }, [config]);
 
   const generateQuestions = (config) => {
+    const filteredChars = currentData; // Используем выбранный алфавит
+
     // Добавляем проверку на наличие символов
     if (!hiraganaData.length) return [];
-
-    // Упрощенная фильтрация - используем все символы
-    const filteredChars = hiraganaData;
 
     // Добавляем проверку на минимальное количество символов
     if (filteredChars.length < 4) {
@@ -152,9 +225,9 @@ const Quiz = ({ config, onFinish }) => {
   };
 
   const updateProgress = () => {
-    const progress = JSON.parse(
-      localStorage.getItem("hiraganaProgress") || "{}"
-    );
+    // Сохраняем прогресс с учетом алфавита
+    const storageKey = `${config.alphabet}Progress`;
+    const progress = JSON.parse(localStorage.getItem(storageKey) || "{}");
 
     questions.forEach((q, index) => {
       const symbol =
@@ -175,7 +248,7 @@ const Quiz = ({ config, onFinish }) => {
       }
     });
 
-    localStorage.setItem("hiraganaProgress", JSON.stringify(progress));
+    localStorage.setItem(storageKey, JSON.stringify(progress));
   };
 
   if (!questions.length) return <div>Loading...</div>;
@@ -194,7 +267,7 @@ const Quiz = ({ config, onFinish }) => {
       <div className="bg-[#7C5185] rounded-3xl p-8 mb-8">
         {currentQ.type === "symbol-to-romaji" ? (
           <h3 className="text-center text-[120px] font-jp">
-            {getJapaneseChar(currentQ.correctAnswer)}
+            {getJapaneseChar(currentQ.correctAnswer, config.alphabet)}
           </h3>
         ) : (
           <h3 className="text-center text-6xl font-bold">
