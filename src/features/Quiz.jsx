@@ -256,15 +256,23 @@ const Quiz = ({ config, onFinish }) => {
   const currentQ = questions[currentQuestion];
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-6 bg-[#8C5D91] rounded-[45px]">
-      <div className="flex justify-between items-center mb-6">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="w-full max-w-4xl mx-auto p-6 bg-[#8C5D91] rounded-[45px]"
+    >
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="flex justify-between items-center mb-6"
+      >
         <h2 className="text-2xl font-header">
           Вопрос {currentQuestion + 1}/{questions.length}
         </h2>
         <div className="text-xl font-bold">Счёт: {score}</div>
-      </div>
+      </motion.div>
 
-      <div className="bg-[#7C5185] rounded-3xl p-8 mb-8">
+      <motion.div className="bg-[#7C5185] rounded-3xl p-8 mb-8">
         {currentQ.type === "symbol-to-romaji" ? (
           <h3 className="text-center text-[120px] font-jp">
             {getJapaneseChar(currentQ.correctAnswer, config.alphabet)}
@@ -274,9 +282,13 @@ const Quiz = ({ config, onFinish }) => {
             {currentQ.correctAnswer}
           </h3>
         )}
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="grid grid-cols-2 gap-4"
+      >
         {(currentQ.type === "symbol-to-romaji"
           ? currentQ.answers
           : currentQ.symbols
@@ -291,6 +303,9 @@ const Quiz = ({ config, onFinish }) => {
           return (
             <motion.button
               key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1 }}
               onClick={() =>
                 handleAnswer(
                   currentQ.type === "symbol-to-romaji"
@@ -318,7 +333,7 @@ const Quiz = ({ config, onFinish }) => {
             </motion.button>
           );
         })}
-      </div>
+      </motion.div>
 
       {isAnswered && (
         <motion.div
@@ -335,7 +350,7 @@ const Quiz = ({ config, onFinish }) => {
           )}
         </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 };
 
