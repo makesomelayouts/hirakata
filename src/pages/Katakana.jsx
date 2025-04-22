@@ -220,7 +220,7 @@ function Katakana() {
               key={groupIndex}
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: groupIndex * 0.2 }}
+              transition={{ delay: groupIndex * 0.4 }}
               className="flex justify-between space-x-4 bg-[#5D4170]/20 p-3 rounded-xl"
             >
               {group.map((char, charIndex) =>
