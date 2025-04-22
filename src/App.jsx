@@ -9,6 +9,8 @@ import Katakana from "@/pages/Katakana";
 
 // Create a context to manage transitions
 import { createContext, useContext } from "react";
+import { Criteria } from "./pages/Criteria";
+import { Resources } from "./pages/Resources";
 
 // Create the context
 export const TransitionContext = createContext({
@@ -28,6 +30,10 @@ export default function App() {
         return { title: "ひらがな", subtitle: "Хирагана" };
       case "/katakana":
         return { title: "カタカナ", subtitle: "Катакана" };
+      case "/criteria":
+        return { title: "基準", subtitle: "Критерии" };
+      case "/resources":
+        return { title: "リソース", subtitle: "Ресурсы" };
       default:
         return { title: "ようこそ", subtitle: "Главная" };
     }
@@ -78,6 +84,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/hiragana" element={<Hiragana />} />
           <Route path="/katakana" element={<Katakana />} />
+          <Route path="/criteria" element={<Criteria />} />
+          <Route path="/resources" element={<Resources />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </AnimatePresence>
