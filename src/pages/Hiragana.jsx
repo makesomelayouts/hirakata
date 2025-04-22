@@ -45,7 +45,7 @@ const Hiragana = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, {
       once: true,
-      margin: "0px 0px -180px 0px",
+      margin: "0px 0px -200px 0px",
     });
     return [ref, isInView];
   };
@@ -107,8 +107,6 @@ const Hiragana = () => {
 
         <motion.div
           variants={itemVariants}
-          whileHover="hover"
-          whileTap="tap"
           className="z-30 flex flex-col max-w-lg items-center justify-center bg-[#8C5D91] px-6 py-5 rounded-[45px] mt-6"
         >
           <motion.p className="font-body text-2xl font-bold text-right">
