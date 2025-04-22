@@ -323,8 +323,6 @@ function Katakana() {
           </div>
         </motion.div>
       </motion.section>
-
-      <Footer />
     </motion.div>
   );
 }
