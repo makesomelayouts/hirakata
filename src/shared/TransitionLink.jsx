@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom";
 import { useContext } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { TransitionContext } from "../App";
+
+const MotionLink = motion(Link);
 
 export const TransitionLink = ({ to, children, ...props }) => {
   const { startTransition } = useContext(TransitionContext);
@@ -11,8 +14,8 @@ export const TransitionLink = ({ to, children, ...props }) => {
   };
 
   return (
-    <Link to={to} onClick={handleClick} {...props}>
+    <MotionLink to={to} onClick={handleClick} {...props}>
       {children}
-    </Link>
+    </MotionLink>
   );
 };
