@@ -271,13 +271,12 @@ function Katakana() {
           </motion.div>
         )}
       </motion.section>
-
       <motion.section
         ref={section6Ref}
         initial="hidden"
         animate={section6InView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="flex flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto py-16"
+        className="flex flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto py-16 px-4"
       >
         <motion.div
           variants={itemVariants}
@@ -289,18 +288,21 @@ function Katakana() {
 
         <motion.div
           variants={itemVariants}
-          className="font-body font-bold pt-[43px] pr-[28px] pl-[59px] pb-[37px] bg-[#5D4170] rounded-[45px] text-2xl"
+          className="font-body font-bold pt-[43px] pr-[28px] pl-[59px] pb-[37px] bg-[#5D4170] rounded-[45px] text-2xl w-full overflow-x-auto"
         >
-          <div className="grid grid-cols-3 gap-x-8 gap-y-4">
-            <motion.div variants={itemVariants} className="font-body text-2xl">
+          <div className="grid grid-cols-3 gap-x-8 gap-y-4 min-w-[800px]">
+            <motion.div
+              variants={itemVariants}
+              className="font-body text-2xl min-w-[235.36px]"
+            >
               Катакана
             </motion.div>
-            <div className="">Ромадзи</div>
-            <div className="">Перевод</div>
+            <div className="min-w-[235.36px]">Ромадзи</div>
+            <div className="min-w-[235.36px]">Перевод</div>
 
             {[
               ["レストラン", "resutoran", "ресторан"],
-              ["タクシ", "takushī", "такси"],
+              ["タクシー", "takushī", "такси"],
               ["フォーク", "fōku", "вилка"],
               ["ベッド", "beddo", "кровать"],
               ["ペン", "pen", "ручка"],
@@ -314,9 +316,11 @@ function Katakana() {
                 variants={itemVariants}
                 className="contents"
               >
-                <div className="font-jp text-2xl">{katakana}</div>
-                <div className="">{romaji}</div>
-                <div className="">{translation}</div>
+                <div className="font-jp text-2xl min-w-[235.36px]">
+                  {katakana}
+                </div>
+                <div className="min-w-[235.36px]">{romaji}</div>
+                <div className="min-w-[235.36px]">{translation}</div>
               </motion.div>
             ))}
           </div>
