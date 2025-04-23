@@ -9,7 +9,6 @@ import Quiz from "@/features/Quiz";
 import TestOptions from "@/features/TestOptions";
 import { Achievements } from "../features/Achievements";
 import { useRef, useState } from "react";
-import { Footer } from "@/widgets/Footer";
 
 function Katakana() {
   const [testConfig, setTestConfig] = useState(null);
