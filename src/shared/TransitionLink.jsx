@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { TransitionContext } from "../App";
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 export const TransitionLink = ({ to, children, ...props }) => {
   const { startTransition } = useContext(TransitionContext);
