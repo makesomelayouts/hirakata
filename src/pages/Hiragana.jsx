@@ -9,6 +9,7 @@ import Quiz from "@/features/Quiz";
 import TestOptions from "@/features/TestOptions";
 import { Achievements } from "../features/Achievements";
 import { useRef, useState } from "react";
+import { Footer } from "@/widgets/Footer";
 
 const Hiragana = () => {
   const [testConfig, setTestConfig] = useState(null);
@@ -45,7 +46,7 @@ const Hiragana = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, {
       once: true,
-      margin: "0px 0px -200px 0px",
+      margin: "0px 0px -400px 0px",
     });
     return [ref, isInView];
   };
@@ -327,6 +328,8 @@ const Hiragana = () => {
           </div>
         </motion.div>
       </motion.section>
+
+      <Footer />
     </motion.div>
   );
 };
