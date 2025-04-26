@@ -9,6 +9,7 @@ import Quiz from "@/features/Quiz";
 import TestOptions from "@/features/TestOptions";
 import { Achievements } from "../features/Achievements";
 import { useRef, useState } from "react";
+import { Footer } from "@/widgets/Footer";
 
 function Katakana() {
   const [testConfig, setTestConfig] = useState(null);
@@ -49,7 +50,7 @@ function Katakana() {
     const ref = useRef(null);
     const isInView = useInView(ref, {
       once: true,
-      margin: "200px 0px -250px 0px",
+      margin: "200px 0px -400px 0px",
     });
     return [ref, isInView];
   };
@@ -326,6 +327,8 @@ function Katakana() {
           </div>
         </motion.div>
       </motion.section>
+
+      <Footer />
     </motion.div>
   );
 }
