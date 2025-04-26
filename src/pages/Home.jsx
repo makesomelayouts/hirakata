@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 function Home() {
   return (
     <>
-      <motion.div className="min-h-screen bg-[url(@/assets/bg.jpg)] bg-cover max-sm:pt-4 flex flex-col">
+      <motion.div className="min-h-screen bg-[url(@/assets/bg.jpg)] bg-cover flex flex-col">
         <Header />
 
         <div className="flex-grow max-w-[989px] mx-auto">
