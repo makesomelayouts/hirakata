@@ -57,7 +57,6 @@ export const Header = () => {
           Критерии оценивания
         </TransitionLink> */}
 
-        {/* 
         <TransitionLink
           className={`${
             location.pathname === "/resources"
@@ -67,7 +66,7 @@ export const Header = () => {
           to="/resources"
         >
           Полезные ресурсы
-        </TransitionLink> */}
+        </TransitionLink>
       </div>
     </header>
   );
