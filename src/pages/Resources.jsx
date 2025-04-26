@@ -16,7 +16,7 @@ export const Resources = () => {
       <Header />
 
       <div className="flex flex-col items-center justify-center mt-16 mx-8">
-        <h1 className="text-center font-header text-3xl">
+        <h1 className="text-center font-header text-xl lg:text-3xl">
           Полезные ресурсы для изучения японского языка
         </h1>
         <div className="mt-3.5 bg-[#5D4170] h-2 w-full max-w-5xl rounded-full"></div>
