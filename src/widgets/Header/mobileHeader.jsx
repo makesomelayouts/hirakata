@@ -59,7 +59,7 @@ export const MobileHeader = () => {
         onClick={handleClick}
         className="md:hidden p-2 pt-[51px] pl-[40px] mx-[25px] my-[19px] cursor-pointer focus:outline-none relative"
         aria-label="Toggle menu"
-        animate={isVisible ? "open" : "closed"} // Добавлено управление состоянием
+        animate={isVisible ? "open" : "closed"}
       >
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
@@ -71,36 +71,55 @@ export const MobileHeader = () => {
         >
           <motion.path
             d="M2 5H21"
-            stroke="#5B3569"
             strokeWidth="2"
             strokeLinecap="round"
             variants={{
-              closed: { rotate: 0, y: 0 },
-              open: { rotate: 45, y: 7 },
+              closed: {
+                rotate: 0,
+                y: 0,
+                stroke: "#5B3569",
+              },
+              open: {
+                rotate: 45,
+                y: 7,
+                stroke: "#fff",
+              },
             }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.6 }}
           />
           <motion.path
             d="M2 11H21"
-            stroke="#5B3569"
             strokeWidth="2"
             strokeLinecap="round"
             variants={{
-              closed: { opacity: 1 },
-              open: { opacity: 0 },
+              closed: {
+                opacity: 1,
+                stroke: "#5B3569",
+              },
+              open: {
+                opacity: 0,
+                stroke: "#fff",
+              },
             }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.6 }}
           />
           <motion.path
             d="M2 17H21"
-            stroke="#5B3569"
             strokeWidth="2"
             strokeLinecap="round"
             variants={{
-              closed: { rotate: 0, y: 0 },
-              open: { rotate: -45, y: -7 },
+              closed: {
+                rotate: 0,
+                y: 0,
+                stroke: "#5B3569",
+              },
+              open: {
+                rotate: -45,
+                y: -7,
+                stroke: "#fff",
+              },
             }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.6 }}
           />
         </motion.svg>
       </motion.button>
@@ -130,15 +149,15 @@ export const MobileHeader = () => {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="33"
-                height="33"
                 viewBox="0 0 23 23"
                 fill="none"
+                className="w-8 h-8 sm:w-10 sm:h-10" // Адаптивные размеры
               >
                 <path
                   d="M2 2L21 21M21 2L2 21"
                   stroke="#fff"
-                  strokeWidth="3"
+                  strokeWidth="2" // Уменьшенная толщина
+                  className="sm:stroke-[3]" // Увеличиваем на больших экранах
                   strokeLinecap="round"
                 />
               </svg>
