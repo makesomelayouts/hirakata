@@ -11,7 +11,7 @@ export default function TestOptions({ onStartTest }) {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-6 bg-[#8C5D91] rounded-[45px] mt-16">
+    <div className="w-full max-w-4xl mx-auto p-6 bg-[#8C5D91] rounded-[45px]">
       <h2 className="text-3xl font-header text-center mb-6">Выбор теста</h2>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-4 cursor-auto">
