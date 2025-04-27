@@ -163,7 +163,7 @@ const Hiragana = () => {
         initial="hidden"
         animate={section3InView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="flex flex-col lg:flex-row items-center justify-between px-4 lg:px-0 max-w-[1200px] mx-auto mt-16 lg:mt-32 gap-8"
+        className="flex flex-col lg:flex-row items-center justify-between px-4 lg:px-0 max-w-[1000px] mx-auto mt-16 lg:mt-32 gap-8"
       >
         <motion.div
           variants={itemVariants}
@@ -219,60 +219,6 @@ const Hiragana = () => {
             </motion.div>
           </motion.div>
         )}
-      </motion.section>
-
-      <motion.section
-        ref={section6Ref}
-        initial="hidden"
-        animate={section6InView ? "visible" : "hidden"}
-        variants={containerVariants}
-        className="flex flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto py-16 max-lg:hidden"
-      >
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col items-center justify-center md:px-8"
-        >
-          <h1 className="text-center font-header text-4xl md:text-5xl">
-            Примеры слов
-          </h1>
-          <div className="mt-3.5 bg-[#8C5D91] h-2.5 w-full rounded-full" />
-        </motion.div>
-
-        <motion.div
-          variants={itemVariants}
-          className="font-body font-bold pt-[43px] pr-[28px] pl-[59px] pb-[37px] bg-[#8C5D91] rounded-[45px] text-2xl"
-        >
-          <div className="grid grid-cols-3 gap-x-8 gap-y-4">
-            {/* Заголовки */}
-            <motion.div variants={itemVariants} className="font-body text-2xl">
-              Хирагана
-            </motion.div>
-            <div className="">Ромадзи</div>
-            <div className="">Перевод</div>
-
-            {[
-              ["にほん", "нихон", "Япония"],
-              ["にほんご", "нихонго", "японский язык"],
-              ["ひと", "хито", "человек"],
-              ["おとこ", "отоко", "мужчина"],
-              ["おんな", "онна", "женщина"],
-              ["あさ", "аса", "утро"],
-              ["いい", "ий", "хороший, добрый"],
-              ["かく", "каку", "писать"],
-              ["はなす", "ханасу", "говорить"],
-            ].map(([hiragana, romaji, translation], index) => (
-              <motion.div
-                key={`row-${index}`}
-                variants={itemVariants}
-                className="contents"
-              >
-                <motion.div className="font-jp text-2xl">{hiragana}</motion.div>
-                <div className="">{romaji}</div>
-                <div className="">{translation}</div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </motion.section>
 
       {/* Секция с алфавитом */}
@@ -340,6 +286,60 @@ const Hiragana = () => {
                 <div className="text-center py-3 text-[#FFE5F6]">
                   {translation}
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </motion.section>
+
+      <motion.section
+        ref={section6Ref}
+        initial="hidden"
+        animate={section6InView ? "visible" : "hidden"}
+        variants={containerVariants}
+        className="flex flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto py-16 max-lg:hidden"
+      >
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col items-center justify-center md:px-8"
+        >
+          <h1 className="text-center font-header text-4xl md:text-5xl">
+            Примеры слов
+          </h1>
+          <div className="mt-3.5 bg-[#8C5D91] h-2.5 w-full rounded-full" />
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          className="font-body font-bold pt-[43px] pr-[28px] pl-[59px] pb-[37px] bg-[#8C5D91] rounded-[45px] text-2xl"
+        >
+          <div className="grid grid-cols-3 gap-x-8 gap-y-4">
+            {/* Заголовки */}
+            <motion.div variants={itemVariants} className="font-body text-2xl">
+              Хирагана
+            </motion.div>
+            <div className="">Ромадзи</div>
+            <div className="">Перевод</div>
+
+            {[
+              ["にほん", "нихон", "Япония"],
+              ["にほんご", "нихонго", "японский язык"],
+              ["ひと", "хито", "человек"],
+              ["おとこ", "отоко", "мужчина"],
+              ["おんな", "онна", "женщина"],
+              ["あさ", "аса", "утро"],
+              ["いい", "ий", "хороший, добрый"],
+              ["かく", "каку", "писать"],
+              ["はなす", "ханасу", "говорить"],
+            ].map(([hiragana, romaji, translation], index) => (
+              <motion.div
+                key={`row-${index}`}
+                variants={itemVariants}
+                className="contents"
+              >
+                <motion.div className="font-jp text-2xl">{hiragana}</motion.div>
+                <div className="">{romaji}</div>
+                <div className="">{translation}</div>
               </motion.div>
             ))}
           </div>
