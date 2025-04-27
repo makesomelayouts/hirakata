@@ -16,7 +16,7 @@ export const Footer = ({ page }) => {
           page === "home"
             ? "max-w-[989px] lg:py-12"
             : "max-w-[1127px] lg:py-[79px]"
-        } max-lg:px-10 max-lg:py-6 mx-auto font-body flex flex-col md:flex-row justify-between items-center text-center font-bold text-2xl`}
+        } max-lg:px-10 max-lg:py-6 mx-auto font-body flex flex-col min-[853px]:flex-row justify-between items-center text-center font-bold text-2xl`}
       >
         <div className="max-[567px]:whitespace-nowrap">
           <p className="inline">{`© ${new Date().getFullYear()}: `}</p>
