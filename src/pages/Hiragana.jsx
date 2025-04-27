@@ -14,6 +14,17 @@ import { Footer } from "@/widgets/Footer";
 const Hiragana = () => {
   const [testConfig, setTestConfig] = useState(null);
   const { scrollYProgress } = useScroll();
+
+  const useAnimateOnView = () => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, {
+      once: true,
+      margin: "0px 0px -400px 0px",
+    });
+    return [ref, isInView];
+  };
+  const [mobileSectionRef, mobileSectionInView] = useAnimateOnView();
+  const [desktopSectionRef, desktopSectionInView] = useAnimateOnView();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 40,
@@ -25,7 +36,7 @@ const Hiragana = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.4,
+        staggerChildren: 0.1,
         when: "beforeChildren",
       },
     },
@@ -37,18 +48,10 @@ const Hiragana = () => {
       opacity: 1,
       y: 0,
       transition: {
-        stiffness: 200,
+        type: "spring",
+        stiffness: 120,
       },
     },
-  };
-
-  const useAnimateOnView = () => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, {
-      once: true,
-      margin: "0px 0px -400px 0px",
-    });
-    return [ref, isInView];
   };
 
   const [section1Ref, section1InView] = useAnimateOnView();
@@ -222,10 +225,11 @@ const Hiragana = () => {
       </motion.section>
 
       {/* Секция с алфавитом */}
+      {/* Мобильная версия */}
       <motion.section
-        ref={section6Ref}
+        ref={mobileSectionRef} // Уникальный реф для мобильной версии
         initial="hidden"
-        animate={section6InView ? "visible" : "hidden"}
+        animate={mobileSectionInView ? "visible" : "hidden"}
         variants={containerVariants}
         className="flex flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto py-16 lg:hidden"
       >
@@ -292,12 +296,13 @@ const Hiragana = () => {
         </motion.div>
       </motion.section>
 
+      {/* Десктопная версия */}
       <motion.section
-        ref={section6Ref}
+        ref={desktopSectionRef} // Уникальный реф для десктопной версии
         initial="hidden"
-        animate={section6InView ? "visible" : "hidden"}
+        animate={desktopSectionInView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="flex flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto py-16 max-lg:hidden"
+        className="flex flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto py-16 hidden lg:flex"
       >
         <motion.div
           variants={itemVariants}
