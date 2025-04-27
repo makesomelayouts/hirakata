@@ -302,7 +302,7 @@ const Hiragana = () => {
         initial="hidden"
         animate={desktopSectionInView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="flex flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto py-16 hidden lg:flex"
+        className="flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto py-16 hidden lg:flex"
       >
         <motion.div
           variants={itemVariants}

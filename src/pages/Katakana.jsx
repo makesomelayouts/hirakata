@@ -60,7 +60,8 @@ function Katakana() {
   const [section3Ref, section3InView] = useAnimateOnView();
   const [section4Ref, section4InView] = useAnimateOnView();
   const [section5Ref, section5InView] = useAnimateOnView();
-  const [section6Ref, section6InView] = useAnimateOnView();
+  const [mobileSectionRef, mobileSectionInView] = useAnimateOnView();
+  const [desktopSectionRef, desktopSectionInView] = useAnimateOnView();
 
   return (
     <motion.div
@@ -292,17 +293,17 @@ function Katakana() {
         )}
       </motion.section>
 
-      {/* Секция с примерами слов */}
+      {/* Мобильная версия */}
       <motion.section
-        ref={section6Ref}
+        ref={mobileSectionRef}
         initial="hidden"
-        animate={section6InView ? "visible" : "hidden"}
+        animate={mobileSectionInView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="flex flex-col items-center justify-center gap-8 lg:gap-[41px] px-4 lg:px-0 max-w-[1200px] mx-auto pb-16 lg:py-16"
+        className="flex flex-col items-center justify-center gap-8 lg:gap-[41px] px-4 lg:px-0 max-w-[1200px] mx-auto pb-16 lg:py-16 lg:hidden"
       >
         <motion.div
           variants={itemVariants}
-          className="flex flex-col items-center justify-center w-full"
+          className="flex flex-col items-center justify-center w-full px-2"
         >
           <h1 className="text-center font-header text-4xl md:text-5xl">
             Примеры слов
@@ -355,6 +356,60 @@ function Katakana() {
                 <div className="text-center py-3 text-[#FFE5F6]">
                   {translation}
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </motion.section>
+
+      {/* Десктопная версия */}
+      <motion.section
+        ref={desktopSectionRef}
+        initial="hidden"
+        animate={desktopSectionInView ? "visible" : "hidden"}
+        variants={containerVariants}
+        className="hidden lg:flex flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto py-16"
+      >
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col items-center justify-center w-full"
+        >
+          <h1 className="text-center font-header text-4xl md:text-5xl">
+            Примеры слов
+          </h1>
+          <div className="mt-3.5 bg-[#5D4170] h-2.5 w-full rounded-full"></div>
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          className="font-body font-bold pt-[43px] pr-[28px] pl-[59px] pb-[37px] bg-[#5D4170] rounded-[45px] text-2xl"
+        >
+          <div className="grid grid-cols-3 gap-x-8 gap-y-4">
+            <motion.div variants={itemVariants} className="font-body text-2xl">
+              Катакана
+            </motion.div>
+            <div className="">Ромадзи</div>
+            <div className="">Перевод</div>
+
+            {[
+              ["レストラン", "resutoran", "ресторан"],
+              ["タクシー", "takushī", "такси"],
+              ["フォーク", "fōku", "вилка"],
+              ["ベッド", "beddo", "кровать"],
+              ["ペン", "pen", "ручка"],
+              ["モスクワ", "mosukuwa", "Москва"],
+              ["キリン", "kirin", "жираф"],
+              ["カラス", "karasu", "ворона"],
+              ["マグロ", "maguro", "тунец"],
+            ].map(([katakana, romaji, translation], index) => (
+              <motion.div
+                key={`row-${index}`}
+                variants={itemVariants}
+                className="contents"
+              >
+                <motion.div className="font-jp text-2xl">{katakana}</motion.div>
+                <div className="">{romaji}</div>
+                <div className="">{translation}</div>
               </motion.div>
             ))}
           </div>
