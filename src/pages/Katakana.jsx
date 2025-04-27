@@ -299,16 +299,16 @@ function Katakana() {
         initial="hidden"
         animate={mobileSectionInView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="flex flex-col items-center justify-center gap-8 lg:gap-[41px] px-4 lg:px-0 max-w-[1200px] mx-auto pb-16 lg:py-16 lg:hidden"
+        className="flex flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto py-16 lg:hidden"
       >
         <motion.div
           variants={itemVariants}
-          className="flex flex-col items-center justify-center w-full px-2"
+          className="flex flex-col items-center justify-center md:px-8"
         >
           <h1 className="text-center font-header text-4xl md:text-5xl">
             Примеры слов
           </h1>
-          <div className="mt-3.5 bg-[#5D4170] h-2.5 w-full rounded-full"></div>
+          <div className="mt-3.5 bg-[#8C5D91] h-2.5 w-full rounded-full" />
         </motion.div>
 
         <motion.div
@@ -368,11 +368,11 @@ function Katakana() {
         initial="hidden"
         animate={desktopSectionInView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="hidden lg:flex flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto py-16"
+        className="flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto py-16 hidden lg:flex"
       >
         <motion.div
           variants={itemVariants}
-          className="flex flex-col items-center justify-center w-full"
+          className="flex flex-col items-center justify-center md:px-8"
         >
           <h1 className="text-center font-header text-4xl md:text-5xl">
             Примеры слов
