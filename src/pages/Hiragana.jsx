@@ -198,6 +198,73 @@ const Hiragana = () => {
         </motion.p>
       </motion.section>
 
+      {/* Секция с алфавитом */}
+      <motion.section
+        ref={section4Ref}
+        initial="hidden"
+        animate={section4InView ? "visible" : "hidden"}
+        variants={containerVariants}
+        className="flex flex-col items-center justify-center px-4 lg:px-0 max-w-[1072px] mx-auto mt-16 lg:mt-[162px]"
+      >
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col items-center justify-center w-full"
+        >
+          <h1 className="text-center font-header text-4xl md:text-5xl">
+            Алфавит
+          </h1>
+          <div className="mt-3.5 bg-[#8C5D91] h-2.5 w-full rounded-full"></div>
+        </motion.div>
+
+        <div className="mt-8 w-full space-y-4 px-2">
+          {[
+            ["a", "i", "u", "e", "o"],
+            ["ka", "ki", "ku", "ke", "ko"],
+            ["sa", "shi", "su", "se", "so"],
+            ["ta", "chi", "tsu", "te", "to"],
+            ["na", "ni", "nu", "ne", "no"],
+            ["ha", "hi", "fu", "he", "ho"],
+            ["ma", "mi", "mu", "me", "mo"],
+            ["ya", "", "yu", "", "yo"],
+            ["wa", "", "n", "", "wo"],
+          ].map((group, groupIndex) => (
+            <motion.div
+              key={groupIndex}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: groupIndex * 0.4 }}
+              className="flex flex-col md:flex-row justify-between gap-2 md:gap-4 bg-[#8C5D91]/20 p-3 rounded-xl"
+            >
+              {group.map((char, charIndex) =>
+                char ? (
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    key={`${groupIndex}-${charIndex}`}
+                    className="flex-1 flex flex-col items-center justify-center p-2 min-w-[60px]"
+                  >
+                    <p
+                      className="font-jp text-2xl md:text-4xl cursor-pointer hover:text-[#E7D2D2] active:text-[#3A2647]"
+                      onClick={() => AudioManager.play(char)}
+                    >
+                      {getJapaneseChar(char, "hiragana")}
+                    </p>
+                    <p className="font-body text-sm md:text-xl mt-1 md:mt-2">
+                      {char}
+                    </p>
+                  </motion.div>
+                ) : (
+                  <div
+                    key={`${groupIndex}-${charIndex}`}
+                    className="flex-1 max-md:hidden"
+                  />
+                )
+              )}
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
       {/* Секция с тестом */}
       <motion.section
         ref={section5Ref}
@@ -224,7 +291,6 @@ const Hiragana = () => {
         )}
       </motion.section>
 
-      {/* Секция с алфавитом */}
       {/* Мобильная версия */}
       <motion.section
         ref={mobileSectionRef} // Уникальный реф для мобильной версии
