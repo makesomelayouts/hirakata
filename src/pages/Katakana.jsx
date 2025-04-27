@@ -169,7 +169,7 @@ function Katakana() {
         initial="hidden"
         animate={section3InView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="flex flex-col lg:flex-row items-center justify-between px-4 lg:px-0 max-w-[1200px] mx-auto mt-16 lg:mt-32 gap-8"
+        className="flex flex-col lg:flex-row items-center justify-between px-4 lg:px-0 max-w-[1000px] mx-auto mt-16 lg:mt-32 gap-8"
       >
         <motion.div
           variants={itemVariants}
