@@ -9,10 +9,10 @@ function Home() {
       <motion.div className="min-h-screen bg-[url(@/assets/bg.jpg)] bg-cover flex flex-col">
         <Header />
 
-        <div className="flex-grow max-w-[989px] mx-auto">
-          <div className="flex flex-col items-baseline justify-center text-white pr-[17rem] pt-[12rem] lg:pt-[14rem] xl:pr-[17rem] xl:pt-[17rem] 2xl:pt-56 max-lg:text-center max-lg:items-center max-lg:pr-0">
+        <div className="flex-grow w-full justify-center items-center lg:justify-baseline flex">
+          <div className="flex flex-col max-w-[989px] lg:w-full text-white max-lg:text-center">
             <motion.h1
-              className="text-3xl font-normal md:text-5xl font-header"
+              className="text-3xl font-normal md:text-5xl font-header lg:text-left"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 2 }}
@@ -31,7 +31,7 @@ function Home() {
             </motion.h1>
 
             <motion.p
-              className="max-w-2xl my-[22px] mx-3 text-base md:text-xl font-bold text-white font-body"
+              className="max-w-2xl my-[22px] mx-3 text-base md:text-xl font-bold text-white font-body lg:text-left lg:mx-0"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 1 }}
@@ -50,7 +50,7 @@ function Home() {
               практике изучения и тестирования иероглифов хираганы и катаканы
             </motion.p>
 
-            <div className="flex gap-[22px]">
+            <div className="flex gap-[22px] max-lg:items-center max-lg:justify-center ">
               <TransitionLink
                 to="/hiragana"
                 drag
