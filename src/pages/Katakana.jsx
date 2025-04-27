@@ -87,12 +87,12 @@ function Katakana() {
         initial="hidden"
         animate={section1InView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="z-20 flex flex-col items-center justify-center lg:flex-row gap-[78px]"
+        className="z-20 flex flex-col items-center justify-center px-4 lg:px-0 lg:flex-row gap-8 lg:gap-[78px]"
       >
         <motion.div className="flex flex-col items-center justify-center">
           <motion.h1
             variants={itemVariants}
-            className="z-30 mt-[64px] text-center font-header text-5xl"
+            className="z-30 mt-8 lg:mt-[64px] text-center font-header text-4xl md:text-5xl"
           >
             Катакана
           </motion.h1>
@@ -106,41 +106,47 @@ function Katakana() {
             variants={itemVariants}
             src={geisha}
             alt="Гейша"
-            className="mt-[30px] select-none order-2"
+            className="mt-8 lg:mt-[30px] select-none max-lg:w-full max-lg:max-w-[500px] max-lg:hidden"
           />
         </motion.div>
 
         <motion.div
           variants={itemVariants}
-          className="z-30 flex flex-col max-w-lg items-center justify-center bg-[#5D4170] px-6 py-5 rounded-[45px] mt-6"
+          className="z-30 flex flex-col w-full max-w-lg items-center justify-center bg-[#5D4170] px-4 sm:px-6 py-5 rounded-[45px] lg:mt-6 lg:mt-0"
         >
-          <motion.p className="font-body text-2xl font-bold text-right">
+          <motion.p className="font-body text-lg md:text-2xl font-bold text-center">
             — это японская азбука, которая состоит из 46 слогов и обладает своей
             уникальной графикой. Каждый символ катаканы обозначает определённый
             звук
           </motion.p>
 
           <motion.div
-            className="relative mt-3 w-[467px] h-[260px] bg-[#4A315A] hover:bg-[#3A2647] transition duration-400 ease-in-out rounded-4xl cursor-pointer"
+            className="relative mt-3 w-full max-w-[467px] min-h-[260px] bg-[#4A315A] hover:bg-[#3A2647] transition duration-400 ease-in-out rounded-4xl cursor-pointer overflow-hidden"
             onClick={() => AudioManager.play("a")}
           >
-            <motion.h1 className="pointer-events-none absolute top-[-30%] left-[22%] text-[260px] font-jp select-none">
+            <motion.h1
+              className="pointer-events-none absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-[180px] min-[375px]:text-[200px] sm:text-[260px] font-jp select-none"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", bounce: 0.6 }}
+            >
               ア
             </motion.h1>
           </motion.div>
         </motion.div>
       </motion.section>
 
+      {/* Секция с чайной церемонией */}
       <motion.section
         ref={section2Ref}
         initial="hidden"
         animate={section2InView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="flex mt-[90px] flex-col items-center justify-between max-w-[1100px] mx-auto lg:flex-row"
+        className="flex flex-col lg:flex-row items-center justify-between px-4 lg:px-0 max-w-[1100px] mx-auto mt-16 lg:mt-[90px] gap-8"
       >
         <motion.p
           variants={itemVariants}
-          className="font-body text-2xl font-bold text-left pl-[26px] pr-[19px] py-[52px] bg-[#5D4170] rounded-[45px] max-w-[543px]"
+          className="font-body text-lg md:text-2xl font-bold text-center lg:text-left px-6 py-8 bg-[#5D4170] rounded-[45px] w-full lg:max-w-[543px]"
         >
           Основное назначение катаканы — обозначать иностранные слова и имена, а
           также выделять слова и фразы в тексте для акцента. Например, слово
@@ -152,35 +158,40 @@ function Katakana() {
           variants={itemVariants}
           src={teaCeremony}
           alt="Чайная церемония"
-          className="lg:mr-32 lg:mt-0 mt-20"
+          className="max-lg:w-full max-lg:max-w-[500px] lg:mr-32 max-lg:hidden"
         />
       </motion.section>
 
+      {/* Секция с картой Японии */}
       <motion.section
         ref={section3Ref}
         initial="hidden"
         animate={section3InView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="flex flex-col items-center justify-between lg:flex-row max-w-[1200px] mx-auto mt-32"
+        className="flex flex-col lg:flex-row items-center justify-between px-4 lg:px-0 max-w-[1200px] mx-auto mt-16 lg:mt-32 gap-8"
       >
         <motion.div
           variants={itemVariants}
-          className="flex flex-col items-center justify-center px-8 ml-32"
+          className="flex flex-col items-center gap-4 px-4 max-lg:hidden"
         >
           <motion.img
             src={japanMap}
             alt="Карта Японии"
+            className="w-full max-w-[400px]"
             whileHover={{ rotate: [-2, 2, -2] }}
             transition={{ duration: 1, repeat: Infinity }}
           />
-          <motion.p variants={itemVariants} className="font-jp text-[64px]">
+          <motion.p
+            variants={itemVariants}
+            className="font-jp text-4xl lg:text-[64px]"
+          >
             カタカナ
           </motion.p>
         </motion.div>
 
         <motion.p
           variants={itemVariants}
-          className="font-body font-bold text-right pt-[43px] pr-[28px] pl-[14px] pb-[37px] bg-[#5D4170] mr-10 rounded-[45px] max-w-[543px] text-2xl"
+          className="font-body text-lg md:text-2xl font-bold text-center lg:text-right px-6 py-8 bg-[#5D4170] rounded-[45px] w-full lg:max-w-[543px]"
         >
           Катакана возникла в IX веке как упрощённая форма угловатых штрихов
           кандзи. Первоначально выполняла служебную функцию, аналогичную
@@ -194,17 +205,19 @@ function Katakana() {
         initial="hidden"
         animate={section4InView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="flex flex-col items-center justify-center max-w-[1072px] mx-auto mt-[162px]"
+        className="flex flex-col items-center justify-center px-4 lg:px-0 max-w-[1072px] mx-auto mt-16 lg:mt-[162px]"
       >
         <motion.div
           variants={itemVariants}
-          className="flex flex-col items-center justify-center"
+          className="flex flex-col items-center justify-center w-full"
         >
-          <h1 className="text-center font-header text-5xl">Алфавит</h1>
+          <h1 className="text-center font-header text-4xl md:text-5xl">
+            Алфавит
+          </h1>
           <div className="mt-3.5 bg-[#5D4170] h-2.5 w-full rounded-full"></div>
         </motion.div>
 
-        <div className="mt-8 w-full space-y-4">
+        <div className="mt-8 w-full space-y-4 px-2">
           {[
             ["a", "i", "u", "e", "o"],
             ["ka", "ki", "ku", "ke", "ko"],
@@ -221,26 +234,31 @@ function Katakana() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: groupIndex * 0.4 }}
-              className="flex justify-between space-x-4 bg-[#5D4170]/20 p-3 rounded-xl"
+              className="flex flex-col md:flex-row justify-between gap-2 md:gap-4 bg-[#5D4170]/20 p-3 rounded-xl"
             >
               {group.map((char, charIndex) =>
                 char ? (
                   <motion.div
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     key={`${groupIndex}-${charIndex}`}
-                    className="flex-1 flex flex-col items-center justify-center p-2"
+                    className="flex-1 flex flex-col items-center justify-center p-2 min-w-[60px]"
                   >
                     <p
-                      className="font-jp text-4xl cursor-pointer hover:text-[#E7D2D2] active:text-[#3A2647]"
+                      className="font-jp text-2xl md:text-4xl cursor-pointer hover:text-[#E7D2D2] active:text-[#3A2647]"
                       onClick={() => AudioManager.play(char)}
                     >
                       {getJapaneseChar(char, "katakana")}
                     </p>
-                    <p className="font-body text-xl mt-2">{char}</p>
+                    <p className="font-body text-sm md:text-xl mt-1 md:mt-2">
+                      {char}
+                    </p>
                   </motion.div>
                 ) : (
-                  <div key={`${groupIndex}-${charIndex}`} className="flex-1" />
+                  <div
+                    key={`${groupIndex}-${charIndex}`}
+                    className="flex-1 max-md:hidden"
+                  />
                 )
               )}
             </motion.div>
@@ -248,12 +266,13 @@ function Katakana() {
         </div>
       </motion.section>
 
+      {/* Секция с тестом */}
       <motion.section
         ref={section5Ref}
         initial="hidden"
         animate={section5InView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="my-16"
+        className="my-16 px-4 lg:px-0"
       >
         {testConfig ? (
           <Quiz
@@ -272,34 +291,44 @@ function Katakana() {
           </motion.div>
         )}
       </motion.section>
+
+      {/* Секция с примерами слов */}
       <motion.section
         ref={section6Ref}
         initial="hidden"
         animate={section6InView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="flex flex-col items-center justify-center gap-[41px] max-w-[1200px] mx-auto py-16 px-4"
+        className="flex flex-col items-center justify-center gap-8 lg:gap-[41px] px-4 lg:px-0 max-w-[1200px] mx-auto pb-16 lg:py-16"
       >
         <motion.div
           variants={itemVariants}
-          className="flex flex-col items-center justify-center px-8"
+          className="flex flex-col items-center justify-center w-full"
         >
-          <h1 className="text-center font-header text-5xl">Примеры слов</h1>
+          <h1 className="text-center font-header text-4xl md:text-5xl">
+            Примеры слов
+          </h1>
           <div className="mt-3.5 bg-[#5D4170] h-2.5 w-full rounded-full"></div>
         </motion.div>
 
         <motion.div
           variants={itemVariants}
-          className="font-body font-bold pt-[43px] pr-[28px] pl-[59px] pb-[37px] bg-[#5D4170] rounded-[45px] text-2xl w-full overflow-x-auto"
+          className="font-body w-full bg-[#5D4170] rounded-[28px] p-6 md:p-8 overflow-x-auto"
         >
-          <div className="grid grid-cols-3 gap-x-8 gap-y-4 min-w-[800px]">
+          <div className="grid grid-cols-3 gap-x-4 md:gap-x-8 gap-y-4 min-w-[600px]">
             <motion.div
               variants={itemVariants}
-              className="font-body text-2xl min-w-[235.36px]"
+              className="col-span-3 flex justify-between pb-3 border-b-2 border-[#FFD5F3]"
             >
-              Катакана
+              <span className="text-[#FFF0F9] font-bold text-sm w-1/3 text-center">
+                Катакана
+              </span>
+              <span className="text-[#FFF0F9] font-bold text-sm w-1/3 text-center">
+                Ромадзи
+              </span>
+              <span className="text-[#FFF0F9] font-bold text-sm w-1/3 text-center">
+                Перевод
+              </span>
             </motion.div>
-            <div className="min-w-[235.36px]">Ромадзи</div>
-            <div className="min-w-[235.36px]">Перевод</div>
 
             {[
               ["レストラン", "resutoran", "ресторан"],
@@ -317,11 +346,15 @@ function Katakana() {
                 variants={itemVariants}
                 className="contents"
               >
-                <div className="font-jp text-2xl min-w-[235.36px]">
+                <div className="font-jp text-lg md:text-2xl text-center py-3 border-r-2 border-[#FFD5F3]/30">
                   {katakana}
                 </div>
-                <div className="min-w-[235.36px]">{romaji}</div>
-                <div className="min-w-[235.36px]">{translation}</div>
+                <div className="text-center py-3 border-r-2 border-[#FFD5F3]/30">
+                  {romaji}
+                </div>
+                <div className="text-center py-3 text-[#FFE5F6]">
+                  {translation}
+                </div>
               </motion.div>
             ))}
           </div>

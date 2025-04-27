@@ -92,9 +92,11 @@ export function Achievements({ alphabet = "hiragana" }) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="w-full max-w-4xl mx-auto p-6 bg-[#8C5D91] rounded-[45px] mt-8"
+      className="w-full max-w-4xl mx-auto p-6 bg-[#8C5D91] rounded-[45px]"
     >
-      <h2 className="text-3xl font-header text-center mb-6">Достижения</h2>
+      <h2 className="text-2xl md:text-3xl font-header text-center mb-6">
+        Достижения
+      </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {achievements.map((achievement, index) => (
