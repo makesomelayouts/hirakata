@@ -31,7 +31,7 @@ function Home() {
             </motion.h1>
 
             <motion.p
-              className="max-w-2xl my-[22px] text-base md:text-xl font-bold text-white font-body"
+              className="max-w-2xl my-[22px] mx-3 text-base md:text-xl font-bold text-white font-body"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 1 }}
