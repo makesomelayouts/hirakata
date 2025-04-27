@@ -18,15 +18,16 @@ export const Footer = ({ page }) => {
             : "max-w-[1127px] lg:py-[79px]"
         } max-lg:px-10 max-lg:py-6 mx-auto font-body flex flex-col md:flex-row justify-between items-center text-center font-bold text-2xl`}
       >
-        <div>
+        <div className="max-[567px]:whitespace-nowrap">
           <p className="inline">{`© ${new Date().getFullYear()}: `}</p>
           <TransitionLink to="/" className="hover:underline inline">
             ХираКата
           </TransitionLink>
         </div>
 
-        <div>
-          от &#123; code:{" "}
+        {/* Десктопная версия */}
+        <div className="max-[567px]:hidden">
+          от&nbsp;&#123; code:&nbsp;
           <a
             className="hover:underline"
             href="https://t.me/maxelonej"
@@ -34,15 +35,41 @@ export const Footer = ({ page }) => {
           >
             maxelonej
           </a>
-          , ux/ui:{" "}
+          , ux/ui:&nbsp;
           <a
             className="hover:underline"
             href="https://t.me/ekarq"
             target="_blank"
           >
             ekarq
-          </a>{" "}
-          &#125;;
+          </a>
+          &nbsp;&#125;;
+        </div>
+
+        {/* Мобильная версия */}
+        <div className="min-[567px]:hidden text-left mt-4">
+          <div>от&nbsp;&#123;</div>
+          <div className="ml-4">
+            code:&nbsp;
+            <a
+              className="hover:underline"
+              href="https://t.me/maxelonej"
+              target="_blank"
+            >
+              maxelonej,
+            </a>
+          </div>
+          <div className="ml-4">
+            ux/ui:&nbsp;
+            <a
+              className="hover:underline"
+              href="https://t.me/ekarq"
+              target="_blank"
+            >
+              ekarq
+            </a>
+          </div>
+          <div>&#125;;</div>
         </div>
       </div>
     </footer>
