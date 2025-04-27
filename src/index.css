@@ -8,6 +8,16 @@
   --font-jp: "Zen Antique";
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (hover: none) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 *::selection {
   background: #c192c6;
 }
