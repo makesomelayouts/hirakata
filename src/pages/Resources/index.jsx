@@ -19,7 +19,7 @@ export const Resources = () => {
       className="min-h-screen"
       style={{
         background:
-          "linear-gradient(179.92deg, #C06BC9 -52.19%, #EBAAC1 61.17%)",
+          "linear-gradient(179.92deg, #A873AE -52.19%, #EBAAC1 61.17%)",
       }}
     >
       <Header />
