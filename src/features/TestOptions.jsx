@@ -22,7 +22,7 @@ export default function TestOptions({ onStartTest }) {
             <select
               value={testType}
               onChange={(e) => setTestType(e.target.value)}
-              className="w-full p-3 cursor-auto rounded-lg bg-[#7C5185] border-2 border-[#5B3569]"
+              className="w-full p-3 cursor-pointer rounded-lg bg-[#7C5185] border-2 border-[#5B3569]"
             >
               <option value="symbol-to-romaji">Символ → Ромадзи</option>
               <option value="romaji-to-symbol">Ромадзи → Символ</option>
@@ -37,7 +37,7 @@ export default function TestOptions({ onStartTest }) {
             <select
               value={questionCount}
               onChange={(e) => setQuestionCount(Number(e.target.value))}
-              className="w-full p-3 rounded-lg cursor-auto bg-[#7C5185] border-2 border-[#5B3569]"
+              className="w-full p-3 cursor-pointer rounded-lg bg-[#7C5185] border-2 border-[#5B3569]"
             >
               <option value={10}>10 вопросов</option>
               <option value={20}>20 вопросов</option>

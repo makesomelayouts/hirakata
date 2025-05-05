@@ -59,7 +59,6 @@ const Hiragana = () => {
   const [section3Ref, section3InView] = useAnimateOnView();
   const [section4Ref, section4InView] = useAnimateOnView();
   const [section5Ref, section5InView] = useAnimateOnView();
-  const [section6Ref, section6InView] = useAnimateOnView();
 
   return (
     <motion.div

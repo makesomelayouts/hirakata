@@ -47,7 +47,8 @@ html {
 }
 
 /* Custom cursor */
-.app {
+.app,
+.cursor-auto {
   cursor: url(assets/neo-nyan-cursor.png), auto;
 }
 
