@@ -30,10 +30,10 @@ export const Footer = ({ page }) => {
           от&nbsp;&#123; code:&nbsp;
           <a
             className="hover:underline"
-            href="https://t.me/maxelonej"
+            href="https://t.me/makesomelayouts"
             target="_blank"
           >
-            maxelonej
+            makesomelayouts
           </a>
           , ux/ui:&nbsp;
           <a
@@ -47,16 +47,16 @@ export const Footer = ({ page }) => {
         </div>
 
         {/* Мобильная версия */}
-        <div className="min-[567px]:hidden text-left mt-4">
+        <div className="min-[567px]:hidden max-[340px]:hidden text-left mt-4">
           <div>от&nbsp;&#123;</div>
           <div className="ml-4">
             code:&nbsp;
             <a
               className="hover:underline"
-              href="https://t.me/maxelonej"
+              href="https://t.me/makesomelayouts"
               target="_blank"
             >
-              maxelonej,
+              makesomelayouts,
             </a>
           </div>
           <div className="ml-4">
